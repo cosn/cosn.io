@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpx @11ty/eleventy",
-    "build-ghpages": "pnpx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-    "start": "pnpx @11ty/eleventy --serve --quiet",
+    "dev": "pnpx @11ty/eleventy --serve --quiet",
     "debug": "DEBUG=Eleventy* pnpx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* pnpx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* pnpx @11ty/eleventy"
