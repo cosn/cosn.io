@@ -1,0 +1,32 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "description": "Cosmin's personal blog, Pragmatic Optimism",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpx @11ty/eleventy",
+    "build-ghpages": "pnpx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
+    "start": "pnpx @11ty/eleventy --serve --quiet",
+    "debug": "DEBUG=Eleventy* pnpx @11ty/eleventy",
+    "debugstart": "DEBUG=Eleventy* pnpx @11ty/eleventy --serve --quiet",
+    "benchmark": "DEBUG=Eleventy:Benchmark* pnpx @11ty/eleventy"
+  },
+  "keywords": [
+    "cos",
+    "blog",
+    "impatient optimism"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cosn/cosn.github.io.git"
+  },
+  "author": {
+    "name": "Cosmin Nicolaescu",
+    "email": "cos@cosn.io",
+    "url": "https://cosn.io"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
