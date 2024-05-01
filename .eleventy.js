@@ -22,9 +22,8 @@ module.exports = function (config) {
     const svg = metadata.svg[0].buffer.toString()
 
     return `<a
-      class="transition hover:fill-teal-500 dark:hover:text-teal-400 fill-zinc-500 dark:fill-zinc-400"
-      href="${url}" target="_blank">${svg}
-    </a>`
+      class="transition h-6 w-6 hover:fill-teal-500 dark:hover:fill-teal-300 fill-zinc-500 dark:fill-zinc-400"
+      href="${url}" target="_blank">${svg}</a>`
   })
 
   return {

@@ -1,3 +1,4 @@
 .github/
 README.md
 .DS_Store
+src/css/tailwind.css
