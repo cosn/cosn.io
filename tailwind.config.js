@@ -1,10 +1,10 @@
-const typographyPlugin = require('@tailwindcss/typography');
-const typographyStyles = require('./typography');
+const typographyPlugin = require('@tailwindcss/typography')
+const typographyStyles = require('./typography')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
-  content: ['./src/**/*.{html,njk,md,svg}'],
+  content: ['.eleventy.js', './src/**/*.{njk,md,svg}'],
   theme: {
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
