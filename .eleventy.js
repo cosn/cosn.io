@@ -26,6 +26,8 @@ module.exports = function (config) {
       href="${url}" target="_blank">${svg}</a>`
   })
 
+  config.addPassthroughCopy('src/assets/js')
+
   return {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
