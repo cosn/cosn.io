@@ -1,22 +1,23 @@
 <!-- <!DOCTYPE html> -->
-<html lang="en" class="h-full antialiased" style="--header-position: sticky; --content-offset: 116px; --header-height: 180px; --header-mb: -116px;  --header-top: 0px;">
+<html lang="en" class="h-full antialiased" style="--header-position: sticky; --content-offset: 60px; --header-height: 120px; --header-mb: -120px;  --header-top: 0px;">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
     <title>TODO</title>
   </head>
-  <body className="flex h-full bg-zinc-50 dark:bg-black">
+  <body class="flex h-full bg-zinc-50 dark:bg-black">
+    <script src="/assets/js/theme.js"></script>
     <div class="flex w-full">
       <div class="fixed inset-0 flex justify-center sm:px-8">
-        <div class="flex w-full max-w-screen-2xl lg:px-8">
-          <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-400/20">
-          </div>
+        <div class="flex w-full max-w-7xl lg:px-8">
+          <div class="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20"></div>
         </div>
       </div>
       <div class="relative flex w-full flex-col">
         {% include "_partials/header.njk" %}
-        <main className="flex w-full">
+        <div class="flex-none" style="height:var(--content-offset)"></div>
+        <main class="flex w-full">
           <div class="sm:px-8 mt-24 md:mt-28">
             <div class="mx-auto w-full max-w-7xl lg:px-8">
               <div class="relative px-4 sm:px-8 lg:px-12">
@@ -32,6 +33,5 @@
         {% include "_partials/footer.njk" %}
       </div>
     </div>
-    <script src="/assets/js/theme.js" defer></script>
   </body>
 </html>
