@@ -6,10 +6,10 @@
   "scripts": {
     "build": "npm-run-all -p build:*",
     "build:11ty": "pnpx @11ty/eleventy",
-    "build:css": "pnpx tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --postcss",
+    "build:css": "pnpx tailwindcss -i src/css/tailwind.css -o dist/css/styles.css --postcss",
     "dev": "npm-run-all -p dev:*",
     "dev:11ty": "pnpx @11ty/eleventy --serve --quiet",
-    "dev:css": "pnpx tailwindcss -i src/css/tailwind.css -o _site/css/styles.css --watch --postcss",
+    "dev:css": "pnpx tailwindcss -i src/css/tailwind.css -o dist/css/styles.css --watch --postcss",
     "debug": "DEBUG=Eleventy* pnpx @11ty/eleventy",
     "debugstart": "DEBUG=Eleventy* pnpx @11ty/eleventy --serve --quiet",
     "benchmark": "DEBUG=Eleventy:Benchmark* pnpx @11ty/eleventy"
