@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function initTheme() {
     const storedTheme = localStorage.getItem('theme') || 'system'
     applyTheme(storedTheme)
+    themeToggleButton.classList.remove('hidden')
   }
 
   function toggleTheme() {
