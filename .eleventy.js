@@ -27,6 +27,7 @@ module.exports = function (config) {
   })
 
   config.addPassthroughCopy('src/assets/js')
+  config.addPassthroughCopy('src/assets/img')
 
   return {
     markdownTemplateEngine: 'njk',
