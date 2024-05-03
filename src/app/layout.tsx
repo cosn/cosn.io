@@ -5,11 +5,13 @@ import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
+const blogName = 'Pragmatic Optimism'
+
 export const metadata: Metadata = {
   title: {
-    template: '%s - Spencer Sharp',
+    template: `%s - ${blogName}`,
     default:
-      'Spencer Sharp - Software designer, founder, and amateur astronaut',
+      `${blogName} - Thoughts, observations and ideas`,
   },
   description:
     'I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.',
