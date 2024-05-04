@@ -1,0 +1,89 @@
+import { PostLayout } from '@/components/PostLayout'
+import stripe from './stripe.png'
+
+export const post = {
+  published: true,
+  date: '2014-07-13',
+  title: 'A week of stripes',
+  description:
+    "This week was my first week at Stripe, and so far it's been a thrilling experience, even though my mind is still coping with the overload of information it's been subjected to. The people have been extremely friendly and welcoming. The office is both great and in a great location. The food is tasty and the beer selection is spectacular."
+}
+
+export const metadata = {
+  title: post.title,
+  description: post.description,
+}
+
+export default (props) => <PostLayout post={post} {...props} />
+
+<Image src={stripe} />
+
+This week was my first week at [Stripe](https://www.stripe.com), and so far it's been a thrilling experience, even though my mind is still coping with the overload of information it's been subjected to. The people have been extremely friendly and welcoming. The office is both great and in a great location. The food is tasty and the beer selection is spectacular.
+
+I wanted to outline some of the details of my on-boarding process, and compare it to my previous on-boarding at Microsoft. Also, as someone who's been using various enterprise technologies from Microsoft, I was very curious to see what the equivalents are in a small company, so this post will outline many of them.
+
+## Pre-start
+
+Upon accepting my offer, I was sent a welcome email in which all of the company was CC'ed. While a very small thing, receiving tens of welcome emails from people in the company makes you feel happy about your choice.
+
+Next up, a few weeks before starting (assuming there is such a period) you get another email in which you get to choose your email address and office setup, including your laptop (with whatever customizations you'd like!). This means that on your first day you've got your ideal environment available. I think this is valuable not only from a productivity perspective, but also morale. At least for us engineers, not having the hardware you want can be annoying at the very least.
+
+This is one of the first contrasting aspects from Microsoft. When you join Microsoft, you also have your computer available, but it's not one that you chose or customized. I can see why having a custom computer for each of the 130,000 employees can have massive operational overhead, but I also believe Microsoft is moving too much in the "one way" side by institutionalizing the same hardware regardless of job or discipline. An engineer has very different needs from someone in sales. Even within engineering, someone focusing on client development has different needs from someone building web services. Empower your people to make the right choices for themselves and they'll be better, more productive employees.
+
+Another difference worth mentioning is what's on the machine. At Stripe, my laptop had my account already created, my SSH keys configured, the VPN set up and the major repositories available. At Microsoft the first thing I did was re-image the box with the IT image, followed by endless hours of setting up the team-specific software (after figuring out all the permissions -- more on that below).
+
+## First day
+
+Upon going through an office tour and meeting some people, your assigned spin-up buddy (another employee who helps you out while you're ramping up) goes over some of the common tools used inside the company. After lunch, you get your development environment set up by publishing your photo on the Stripe public website. While a rather trivial process, it acts as a forcing function to get your repositories up-to-date, begin familiarizing yourself with the structure of the code, and push a change through the pipeline just like you would anything else moving forward. I can't emphasize enough how **huge** this is! I don't remember exactly when my first check-in went through at Microsoft after starting, but I'm 92% sure it wasn't in my first week.
+
+This is where some of the agility and modern tools start being noticed. Going through that exercise was possible because I had access to everything. For the things that weren't already set up for me, my spin-up buddy would give me access, which was instantaneous. One of the biggest complaints I heard from Microsoft new hires was that, after figuring out what permissions you need, there's a 1-3 day waiting period for replication to take place. This practically means that for your first few days, you really can't be very productive, no matter how much you try.
+
+## Tools
+
+Most of the things above covered process, but more fascinating for me were the tools used. Before joining, I was rather confident that Microsoft has done a good job at building enterprise products, and the fact that so many companies use them is a testament to their success. Moreover, it seemed nearly impossible for Microsoft to lose its leader position. After this week, I'm less convinced of the latter.
+
+### Email && Calendar
+
+At Stripe we use Google Apps, which means every employee gets their email, calendar and directory through Google. You want to schedule a meeting, no problem; there's even support for rooms, and of course it includes free/busy information. All the mailing lists come through Google Apps as well, and there's a nice page where you can see all of them and subscribe to the ones you need. Granted, this works because we're a small company and don't have tens of thousands of mailing lists, but there's nothing preventing that from happening. More importantly, access is __immediate__. There are no replication delays, or approvals. Filters are trivial to create.
+
+But what I was most happy about is that they've solved the "nested lists" problem. I can't recall how many times I got an email at Microsoft because I was a member of some group that eventually got nested through many layers to some other group, but I had no clue what that initial list was. GMail actually tells you for every email which mailing list resulted in you getting an email. It even does that if the list is BCC'ed! Why Exchange hasn't implemented this after all these years is beyond me.
+
+### Notes
+
+OneNote is one of my favorite products from Microsoft. It was available on multiple platforms when the rest of Office was not, and it makes note-taking orders of magnitude better. At Microsoft I would say that information is communicated in one of three formats: email (60%), websites (20%) and OneNote (20%). It wasn't until a few years back that some people started keeping meeting notes in OneNote. But the problem is that there are many OneNotes. Each feature team typically has their own, and they're typically not stored in a place that's easy to find.
+
+Stripe uses [Hackpad](https://hackpad.com), which while not as feature-rich as OneNote, does one thing really well: it keeps all notes from any employee in one place. Through Hackpad I've been able to read how-tos and wikis, as well as notes sent by the co-founders or other people to the company and have historical value.
+
+### Chat
+
+Basic Instant Messaging isn't a new problem, and it's been mainly solved since the late 90s. In addition to IM, Microsoft Lync also had desktop sharing which was very useful, and conferencing was relatively seamless. There were two problems I had with Lync: it was primarily focused on one-to-one interactions. Yes, you could have group chats, but that was a small minority of how people spent their time on Lync. Second, and more importantly, it was pretty ephemeral. Conversation history was available for the participants but, that was about it. Microsoft never embraced an IRC-like communication channel, and I think there's some very practical cases for that.
+
+Stripe uses [Slack](https://slack.com) and they've solved all three problems: they enable direct messaging within an organization. They have channels which people can subscribe to and discuss various topics. And everything said there is persisted and searchable.
+
+### Github
+
+GitHub. 'nuff said.
+
+It's not necessarily where you host your code that makes a huge difference (although I personally think it's pretty hard to beat GitHub). But having a modern, distributed source control technology is invaluable. At Microsoft we spent endless hours debating between Source Depot (an internal technology) and Team Foundation Service (Microsoft's source control product launched a few years back). Both were losing choices. Yes, they each had some advantages and disadvantages, but they were relative to each other. When compared to Git or Mercurial, there were zero advantages.
+
+Luckily Microsoft is moving in the right direction: TFS has added support for Git, and teams are starting to move to that, but adoption will take some time when you're dealing with so many teams and large codebase(s).
+
+A few notes on source control-related topics: code reviews are primarily done via pull requests. Checkins aren't gated since people use feature branches for almost any change, and there is a continuous integration system in place via [Tddiumwhich](https://www.solanolabs.com/) will run all tests with any commit. This is somewhat similar to SNAP or TFS gating, however it has the advantage of being much more scalable since it can test things in parallel and not become a bottleneck.
+
+### Logging in
+
+Everything inside Microsoft relied on Active Directory. Any website or tool used those credentials for authentication and authorization. One you logged in, you generally never had to type your password ever again. This was by far the aspect I was most curious about.
+
+My laptop has a local account, and SSH keys are used to authenticate whenever connecting to another server. So far, I think this is a better experience than Microsoft's because I don't have to worry about credentials in different environments, and instead everything is managed through my public key.
+
+Many of the tools have support for Google Account, and in those cases you go through a simple OAuth flow initially, after which you never have to log in again. There are, however, some tools that have their own authentication, and for those you end up creating new accounts.
+
+So overall, it's not 100% centralized, but through OAuth flows it's nearly there.
+
+## Closing thoughts
+
+I realized as I was writing this post that the tone can be construed as somewhat negative towards Microsoft. It's really not meant to be, but I do have to admit I was surprised at how well a non-Microsoft stack can function inside a company, even in areas where I believed Microsoft was the standard. Many of these benefits are due to the use of much more modern tools. There's typically no software to install and everything is available via a web interface. The data is all stored in the cloud. The products were built with scale in mind: there are no delays, and replication is something internal rather than visible to customers.
+
+These are all contributing factors, and mostly valid ones. But at the end of the day, employee productivity is what matters the most. If a particular process or tool doesn't maximize productivity, fix it or replace it. Change inside Microsoft is underway. It's just a matter of how long it will take until it reaches the whole company. The sad part is that its competitors not only aren't spending efforts migrating and re-educating, but that they've been living in that "modern world" for a few years.
+
+Now time to get back to learning some new stuff...

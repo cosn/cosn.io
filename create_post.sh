@@ -17,7 +17,7 @@ export const post = {
   date: '${date}',
   title: '${title}',
   description:
-    ''
+    ""
 }
 
 export const metadata = {
