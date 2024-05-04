@@ -25,7 +25,7 @@ export const metadata = {
   description: post.description,
 }
 
-export default (props) => <postLayout post={post} {...props} />
+export default (props) => <PostLayout post={post} {...props} />
 
 
 EOF
