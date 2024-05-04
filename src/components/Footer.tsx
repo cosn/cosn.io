@@ -2,6 +2,8 @@ import Link from 'next/link'
 
 import { ContainerInner, ContainerOuter } from '@/components/Container'
 
+import { meta } from '../lib/meta'
+
 function NavLink({
   href,
   children,
@@ -33,7 +35,7 @@ export function Footer() {
                 <NavLink href="/uses">Uses</NavLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
-                &copy; {new Date().getFullYear()} Spencer Sharp. All rights
+                &copy; {new Date().getFullYear()} {meta.author}. All rights
                 reserved.
               </p>
             </div>

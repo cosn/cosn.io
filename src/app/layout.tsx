@@ -5,7 +5,9 @@ import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
-const blogName = 'Pragmatic Optimism'
+import { meta } from '../lib/meta'
+
+const blogName = meta.title
 
 export const metadata: Metadata = {
   title: {

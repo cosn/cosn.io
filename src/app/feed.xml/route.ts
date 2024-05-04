@@ -1,23 +1,22 @@
 import assert from 'assert'
 import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
+import { meta } from '../../lib/meta'
 
 export async function GET(req: Request) {
-  let siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
   if (!siteUrl) {
     throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
   }
 
-  let author = {
-    name: 'Spencer Sharp',
-    email: 'spencer@planetaria.tech',
-  }
-
-  let feed = new Feed({
-    title: author.name,
+  const feed = new Feed({
+    title: meta.title,
     description: 'Your blog description',
-    author,
+    author: {
+      name: meta.author,
+      email: meta.email,
+    },
     id: siteUrl,
     link: siteUrl,
     image: `${siteUrl}/favicon.ico`,
@@ -28,22 +27,22 @@ export async function GET(req: Request) {
     },
   })
 
-  let postIds = require
+  const postIds = require
     .context('../posts', true, /\/page\.mdx$/)
     .keys()
     .filter((key) => key.startsWith('./'))
     .map((key) => key.slice(2).replace(/\/page\.mdx$/, ''))
 
-  for (let id of postIds) {
-    let url = String(new URL(`/posts/${id}`, req.url))
-    let html = await (await fetch(url)).text()
-    let $ = cheerio.load(html)
+  for (const id of postIds) {
+    const url = String(new URL(`/posts/${id}`, req.url))
+    const html = await (await fetch(url)).text()
+    const $ = cheerio.load(html)
 
-    let publicUrl = `${siteUrl}/posts/${id}`
-    let post = $('post').first()
-    let title = post.find('h1').first().text()
-    let date = post.find('time').first().attr('datetime')
-    let content = post.find('[data-mdx-content]').first().html()
+    const publicUrl = `${siteUrl}/posts/${id}`
+    const post = $('post').first()
+    const title = post.find('h1').first().text()
+    const date = post.find('time').first().attr('datetime')
+    const content = post.find('[data-mdx-content]').first().html()
 
     assert(typeof title === 'string')
     assert(typeof date === 'string')
