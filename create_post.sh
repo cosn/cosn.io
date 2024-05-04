@@ -2,7 +2,7 @@
 
 title=$1
 title="${title// /-}"
-dir="src/app/articles/${title}"
+dir="src/app/posts/${title}"
 
 echo -n "Creating ${dir} ... "
 mkdir -p ${dir}
@@ -10,9 +10,9 @@ mkdir -p ${dir}
 date=$(date +'%Y-%m-%d')
 
 cat > ${dir}/page.mdx << EOF
-import { ArticleLayout } from '@/components/ArticleLayout'
+import { PostLayout } from '@/components/PostLayout'
 
-export const article = {
+export const post = {
   published: false,
   date: '${date}',
   title: '${title}',
@@ -21,11 +21,11 @@ export const article = {
 }
 
 export const metadata = {
-  title: article.title,
-  description: article.description,
+  title: post.title,
+  description: post.description,
 }
 
-export default (props) => <ArticleLayout article={article} {...props} />
+export default (props) => <postLayout post={post} {...props} />
 
 
 EOF

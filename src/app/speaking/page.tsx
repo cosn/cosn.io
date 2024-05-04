@@ -29,7 +29,7 @@ function Appearance({
   href: string
 }) {
   return (
-    <Card as="article">
+    <Card as="post">
       <Card.Title as="h3" href={href}>
         {title}
       </Card.Title>
