@@ -1,5 +1,5 @@
 export const meta = {
   author: 'Cosmin Nicolaescu',
-  email: 'cos@cosn.io',
+  email: 'blog@cosn.io',
   title: 'Pragmatic Optimism',
 }
