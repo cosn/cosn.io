@@ -3,7 +3,7 @@ import glob from 'fast-glob'
 interface Post {
   title: string
   description: string
-  author: string
+  published: boolean
   date: string
 }
 
@@ -32,5 +32,7 @@ export async function getAllPosts() {
 
   let posts = await Promise.all(postFilenames.map(importPost))
 
-  return posts.sort((a, z) => +new Date(z.date) - +new Date(a.date))
+  return posts
+    .filter(post => post.published)
+    .sort((a, z) => +new Date(z.date) - +new Date(a.date))
 }
