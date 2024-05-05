@@ -7,7 +7,7 @@ import { formatDate } from '@/lib/formatDate'
 
 function Post({ post }: { post: PostWithSlug }) {
   return (
-    <post className="md:grid md:grid-cols-4 md:items-baseline">
+    <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
         <Card.Title href={`/posts/${post.slug}`}>
           {post.title}
@@ -30,7 +30,7 @@ function Post({ post }: { post: PostWithSlug }) {
       >
         {formatDate(post.date)}
       </Card.Eyebrow>
-    </post>
+    </article>
   )
 }
 
