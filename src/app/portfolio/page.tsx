@@ -3,47 +3,159 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
 
-const projects = [
+import logoFallback from '@/images/logos/portfolio.svg'
+import logoArc from '@/images/logos/arc.svg'
+import logoAtoB from '@/images/logos/atob.svg'
+import logoBend from '@/images/logos/bend.svg'
+import logoBridge from '@/images/logos/bridge.svg'
+import logoBuk from '@/images/logos/buk.svg'
+import logoCoverbase from '@/images/logos/coverbase.svg'
+import logoDosu from '@/images/logos/dosu.svg'
+import logoFragment from '@/images/logos/fragment.png'
+import logoLassie from '@/images/logos/lassie.jpg'
+import logoLogicloop from '@/images/logos/logicloop.svg'
+import logoModernloop from '@/images/logos/modernloop.svg'
+import logoOpine from '@/images/logos/opine.svg'
+import logoOptech from '@/images/logos/optech.svg'
+import logoRepool from '@/images/logos/repool.svg'
+import logoSavvy from '@/images/logos/savvy.svg'
+import logoStandardFleet from '@/images/logos/standardfleet.png'
+import logoWholesail from '@/images/logos/wholesail.svg'
+import logoXflow from '@/images/logos/xflow.svg'
+
+const investments = [
   {
-    name: 'Planetaria',
+    name: 'Arc',
     description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+      'Empowering startups with modern financial products.',
+    link: 'https://joinarc.com',
+    logo: logoArc,
   },
   {
-    name: 'Animaginary',
+    name: 'Savvy',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+      'Striving to build a leading team of financial advisors and technologists to create the modern, all-in-one RIA and wealth management platform.',
+    link: 'https://savvywealth.com', 
+    logo: logoSavvy,
   },
   {
-    name: 'HelioStream',
+    name: 'Repool',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Building the future of hedge fund solutions.',
+    link: 'https://repool.com',
+    logo: logoRepool,
   },
   {
-    name: 'cosmOS',
+    name: 'AtoB',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+      'Helping fleets manage their costs.',
+    link: 'https://atob.com',
+    logo: logoAtoB,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Wholesail',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'Modernizing B2B Trade.',
+    link: 'https://paywholesail.com',
+    logo: logoWholesail,
+  },
+  {
+    name: 'Fragment',
+    description:
+      'The database for money.',
+    link: 'https://fragment.dev',
+    logo: logoFragment,
+  },
+  {
+    name: 'StandardFleet',
+    description:
+      'Effortless EV fleet management.',
+    link: 'https://standardfleet.com',
+    logo: logoStandardFleet,
+  },
+  {
+    name: 'Bend',
+    description:
+      'Bend enriches spend and business activity data with comprehensive emissions estimates, delivering exceptionally accurate, industry-standard scope 3 goods & services reporting.',
+    link: 'https://bend.green',
+    logo: logoBend,
+  },
+  {
+    name: 'Opine',
+    description:
+      'Enabling pre-sales teams to deliver white-glove POCs/pilots at scale while increasing win rates, lowering customer acquisition costs, and reducing time-to-value.',
+    link: 'https://tryopine.com',
+    logo: logoOpine,
+  },
+  {
+    name: 'Coverbase',
+    description:
+      'Fully flexible risk assessment workflows.',
+    link: 'https://coverbase.ai',
+    logo: logoCoverbase,
+  },
+  {
+    name: 'Lassie',
+    description:
+      'Helping doctors to achieve independence by making it easier to start and manage their businesses.',
+    link: 'https://golassie.com',
+    logo: logoLassie,
+  },
+  {
+    name: 'Duna',
+    description:
+      'Rethinking business identity',
+    link: 'https://duna.io',
+  },
+  {
+    name: 'Dosu',
+    description:
+      'Dosu is an AI teammate that lives in your GitHub repo, helping you respond to issues, triage bugs, and build better documentation.',
+    link: 'https://dosu.dev',
+    logo: logoDosu,
+  },
+  {
+    name: 'Optech',
+    description:
+      'Infinitely scale your customer support, and save money doing it.',
+    link: 'https://optech.ai',
+    logo: logoOptech,
+  },
+  {
+    name: 'Modernloop',
+    description:
+      'Efficiently transform your candidate experience.',
+    link: 'https://modernloop.com',
+    logo: logoModernloop,
+  },
+  {
+    name: 'Logicloop',
+    description:
+      'Make your operations data work harder than operations people.',
+    link: 'https://logicloop.com',
+    logo: logoLogicloop,
+  },
+  {
+    name: 'Xflow',
+    description:
+      'Powering international payments for businesses.',
+    link: 'https://xflowpay.com',
+    logo: logoXflow,
+  },
+  {
+    name: 'Buk',
+    description:
+      'A People Management Software for all the needs of your collaborators.',
+    link: 'https://buk.cl',
+    logo: logoBuk,
+  },
+  {
+    name: 'Bridge',
+    description:
+      'APIs that enable developers to move into, out of, and between any form of a dollar.',
+    link: 'https://bridge.xyz',
+    logo: logoBridge,
   },
 ]
 
@@ -59,37 +171,37 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 }
 
 export const metadata: Metadata = {
-  title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  title: 'Porfolio',
+  description: 'Angel investments',
 }
 
-export default function Projects() {
+export default function Portfolio() {
   return (
     <SimpleLayout
-      title={metadata.description}
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title={metadata.description!}
+      intro="As an angel investor and Sequoia scout, I've been fortunate to meet early founders and help them scale their companies. Below are some of my investments made, almost entirely seed and pre-seed."
     >
       <ul
         role="list"
         className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {projects.map((project) => (
+        {investments.sort((a,z) => (a.name.toLowerCase() > z.name.toLowerCase()) ? 1 : -1).map((project) => (
           <Card as="li" key={project.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0">
               <Image
-                src={project.logo}
+                src={project.logo ?? logoFallback}
                 alt=""
                 className="h-8 w-8"
                 unoptimized
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              <Card.Link href={project.link} target="_blank">{project.name}</Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
               <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{project.link.label}</span>
+              <span className="ml-2">{project.link.slice(8)}</span>
             </p>
           </Card>
         ))}
