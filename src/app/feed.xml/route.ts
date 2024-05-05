@@ -53,8 +53,6 @@ export async function GET(req: Request) {
       id: publicUrl,
       link: publicUrl,
       content,
-      author: [author],
-      contributor: [author],
       date: new Date(date),
     })
   }
