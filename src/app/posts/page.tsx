@@ -45,7 +45,7 @@ export default async function PostsIndex() {
 
   return (
     <SimpleLayout
-      title="Thoughts on building products, teams and companies."
+      title={metadata.description!}
       intro="I've generally found written-form to be the clearest way discussing complex topics."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
