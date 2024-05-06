@@ -179,7 +179,7 @@ export default function Portfolio() {
   return (
     <SimpleLayout
       title={metadata.description!}
-      intro="As an angel investor and Sequoia scout, I've been fortunate to meet early founders and help them scale their companies. Below are some of my investments made, almost entirely seed and pre-seed."
+      intro="As an angel investor and Sequoia scout, I've been fortunate to meet early founders, helping them scale their companies. I make a handful of investments each year, almost entirely seed and pre-seed. Below are some of past investments made."
     >
       <ul
         role="list"
@@ -192,7 +192,6 @@ export default function Portfolio() {
                 src={project.logo ?? logoFallback}
                 alt=""
                 className="h-8 w-8"
-                unoptimized
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
