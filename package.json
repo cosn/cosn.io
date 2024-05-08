@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "0.0.1",
-  "description": "Cosmin's personal blog, Pragmatic Optimism",
+  "description": "Pragmatic Optimism, Cosmin's personal blog.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
