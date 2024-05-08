@@ -105,7 +105,7 @@ const investments = [
   {
     name: 'Duna',
     description:
-      'Rethinking business identity',
+      'Rethinking business identity.',
     link: 'https://duna.io',
   },
   {
@@ -179,7 +179,7 @@ export default function Portfolio() {
   return (
     <SimpleLayout
       title={metadata.description!}
-      intro="As an angel investor and Sequoia scout, I've been fortunate to meet early founders, helping them scale their companies. I make a handful of investments each year, almost entirely seed and pre-seed. Below are some of past investments made."
+      intro="As an angel investor and Sequoia scout, I make a handful of investments each year, almost entirely seed and pre-seed. My main motivators are (a) helping the community and (b) learning. Below are some past investments made. If you are an early-stage founder and believe I can help, please email me your pitch deck and we can go from there."
     >
       <ul
         role="list"
