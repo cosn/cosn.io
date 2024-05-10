@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import Script from 'next/script'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
@@ -55,6 +56,7 @@ export default function RootLayout({
             <Layout>{children}</Layout>
           </div>
         </Providers>
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
         <SpeedInsights />
       </body>
     </html>
