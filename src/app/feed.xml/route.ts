@@ -39,7 +39,7 @@ export async function GET(req: Request) {
     const $ = cheerio.load(html)
 
     const publicUrl = `${siteUrl}/posts/${id}`
-    const post = $('post').first()
+    const post = $('article').first()
     const title = post.find('h1').first().text()
     const date = post.find('time').first().attr('datetime')
     const content = post.find('[data-mdx-content]').first().html()
