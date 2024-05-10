@@ -22,6 +22,22 @@ export const metadata: Metadata = {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
     },
   },
+  openGraph: {
+    title: blogName,
+    siteName: blogName,
+    url: process.env.NEXT_PUBLIC_SITE_URL,
+    description:
+      'Observations from building software & companies, plus the occasional random life experiences.',
+    type: 'website',
+  },
+  robots: {
+    follow: true,
+    index: true,
+  },
+  twitter: {
+    title: blogName,
+    creator: '@getCos',
+  },
 }
 
 export default function RootLayout({
