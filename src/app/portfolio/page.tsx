@@ -23,6 +23,7 @@ import logoSavvy from '@/images/logos/savvy.svg'
 import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
 import logoXflow from '@/images/logos/xflow.svg'
+import logoDidero from '@/images/logos/didero.png'
 
 const investments = [
   {
@@ -36,7 +37,7 @@ const investments = [
     name: 'Savvy',
     description:
       'Striving to build a leading team of financial advisors and technologists to create the modern, all-in-one RIA and wealth management platform.',
-    link: 'https://savvywealth.com', 
+    link: 'https://savvywealth.com',
     logo: logoSavvy,
   },
   {
@@ -157,6 +158,13 @@ const investments = [
     link: 'https://bridge.xyz',
     logo: logoBridge,
   },
+  {
+    name: 'Didero',
+    description:
+      'Supply Chain x AI',
+    link: 'https://didero.ai',
+    logo: logoDidero,
+  },
 ]
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -185,7 +193,7 @@ export default function Portfolio() {
         role="list"
         className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {investments.sort((a,z) => (a.name.toLowerCase() > z.name.toLowerCase()) ? 1 : -1).map((project) => (
+        {investments.sort((a, z) => (a.name.toLowerCase() > z.name.toLowerCase()) ? 1 : -1).map((project) => (
           <Card as="li" key={project.name}>
             <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0">
               <Image
