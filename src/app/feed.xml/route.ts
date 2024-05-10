@@ -28,9 +28,12 @@ export async function GET(req: Request) {
   })
 
   const postIds = require
+    //@ts-ignore
     .context('../posts', true, /\/page\.mdx$/)
     .keys()
+    //@ts-ignore
     .filter((key) => key.startsWith('./'))
+    //@ts-ignore
     .map((key) => key.slice(2).replace(/\/page\.mdx$/, ''))
 
   for (const id of postIds) {

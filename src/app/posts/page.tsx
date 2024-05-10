@@ -5,6 +5,14 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import { type PostWithSlug, getAllPosts } from '@/lib/posts'
 import { formatDate } from '@/lib/formatDate'
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      article: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+    }
+  }
+}
+
 function Post({ post }: { post: PostWithSlug }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
