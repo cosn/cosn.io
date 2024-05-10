@@ -7,6 +7,8 @@ import '@/styles/tailwind.css'
 
 import { meta } from '../lib/meta'
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 const blogName = meta.title
 
 export const metadata: Metadata = {
@@ -53,6 +55,7 @@ export default function RootLayout({
             <Layout>{children}</Layout>
           </div>
         </Providers>
+        <SpeedInsights />
       </body>
     </html>
   )
