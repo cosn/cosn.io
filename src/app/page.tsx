@@ -22,7 +22,7 @@ import { metadata } from './layout.tsx'
 
 function Post({ post }: { post: PostWithSlug }) {
   return (
-    <Card as="post">
+    <Card as="article">
       <Card.Title href={`/posts/${post.slug}`}>
         {post.title}
       </Card.Title>
