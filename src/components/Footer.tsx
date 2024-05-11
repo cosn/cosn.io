@@ -8,7 +8,7 @@ import {
   XIcon,
 } from '@/components/SocialIcons'
 
-import { meta } from '../lib/meta'
+import { meta } from '@/lib/meta'
 
 function SocialLink({
   icon: Icon,

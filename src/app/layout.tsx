@@ -6,7 +6,7 @@ import { Layout } from '@/components/Layout'
 
 import '@/styles/tailwind.css'
 
-import { meta } from '../lib/meta'
+import { meta } from '@/lib/meta'
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 

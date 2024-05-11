@@ -14,7 +14,7 @@ export interface PostWithSlug extends Post {
 async function importPost(
   postFilename: string,
 ): Promise<PostWithSlug> {
-  let { post } = (await import(`../app/posts/${postFilename}`)) as {
+  let { post } = (await import(`@/app/posts/${postFilename}`)) as {
     default: React.ComponentType
     post: Post
   }

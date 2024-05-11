@@ -18,6 +18,7 @@ import image5 from '@/images/photos/sushi.png'
 import { type PostWithSlug, getAllPosts } from '@/lib/posts'
 import { formatDate } from '@/lib/formatDate'
 import { metadata } from './layout.tsx'
+import { meta } from '@/lib/meta'
 
 
 function Post({ post }: { post: PostWithSlug }) {
@@ -83,7 +84,7 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100">
-            Pragmatic optimism
+            {meta.title}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {metadata.description!}
