@@ -18,10 +18,12 @@ export function formatDate(dateString: string, relative?: boolean): string {
     return 'Yesterday'
   } else if (days < 7) {
     return `${days} days ago`
-  } else if (days > 7 && days < 30) {
+  } else if (days < 15) {
     return `${Math.floor(days / 7)} weeks ago`
-  } else if (days >= 30 && days < 60) {
-    return `A month ago`
+  } else if (days < 31) {
+    return `This month`
+  } else if (days < 45) {
+    return `Last month`
   } else {
     return formattedDate
   }
