@@ -27,7 +27,7 @@ function Post({ post }: { post: PostWithSlug }) {
         {post.title}
       </Card.Title>
       <Card.Eyebrow as="time" dateTime={post.date} decorate>
-        {formatDate(post.date)}
+        {formatDate(post.date, true)}
       </Card.Eyebrow>
       <Card.Description>{post.description}</Card.Description>
       <Card.Cta>Read post</Card.Cta>
