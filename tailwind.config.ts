@@ -4,7 +4,7 @@ import { type Config } from 'tailwindcss'
 import typographyStyles from './typography'
 
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: ['./src/**/*.{js,jsx,ts,tsx,md,mdx,svg}'],
   darkMode: 'selector',
   plugins: [typographyPlugin],
   theme: {

@@ -45,7 +45,7 @@ function Post({ post }: { post: PostWithSlug }) {
 export const metadata: Metadata = {
   title: 'Posts',
   description:
-    'Long-form thoughts on building, leadership, and random topics, in chronological order.',
+    'Long-form thoughts on building, leadership, and random topics.'
 }
 
 export default async function PostsIndex() {
