@@ -12,7 +12,7 @@ export async function GET(req: Request) {
 
   const feed = new Feed({
     title: meta.title,
-    description: 'Your blog description',
+    description: meta.description,
     author: {
       name: meta.author,
       email: meta.email,

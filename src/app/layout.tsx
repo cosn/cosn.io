@@ -18,8 +18,7 @@ export const metadata: Metadata = {
     default:
       `${blogName} - Ideas, observations, thoughts`,
   },
-  description:
-    'Observations from building software & companies, plus the occasional random life experiences.',
+  description: meta.description,
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
@@ -29,8 +28,7 @@ export const metadata: Metadata = {
     title: blogName,
     siteName: blogName,
     url: process.env.NEXT_PUBLIC_SITE_URL,
-    description:
-      'Observations from building software & companies, plus the occasional random life experiences.',
+    description: meta.description,
     type: 'website',
   },
   robots: {
