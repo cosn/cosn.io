@@ -5,6 +5,7 @@ import {
   GitHubIcon,
   LinkedInIcon,
   MailIcon,
+  RssIcon,
   XIcon,
 } from '@/components/SocialIcons'
 
@@ -17,7 +18,7 @@ function SocialLink({
   icon: React.ComponentType<{ className?: string }>
 }) {
   return (
-    <Link className="group -m-1 p-1" target="_blank" {...props}>
+    <Link className="group -m-1 p-1" {...props}>
       <Icon className="h-6 w-6 fill-zinc-400 transition hover:fill-teal-500 dark:fill-zinc-500 dark:hover:fill-teal-400" />
     </Link>
   )
@@ -42,6 +43,9 @@ export function Footer() {
                 </SocialLink>
                 <SocialLink href="mailto:blog@cosn.io" icon={MailIcon}>
                   Send email
+                </SocialLink>
+                <SocialLink href="/feed.xml" icon={RssIcon}>
+                  Subscribe to RSS
                 </SocialLink>
               </div>
               <p className="text-sm text-zinc-400 dark:text-zinc-500">
