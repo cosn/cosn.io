@@ -1,4 +1,5 @@
 import glob from 'fast-glob'
+import { getAllViews } from './views'
 
 interface Post {
   title: string
@@ -30,6 +31,8 @@ export async function getAllPosts() {
   })
 
   const posts = await Promise.all(postFilenames.map(importPost))
+  const views = await getAllViews()
+  console.log(`views`, views)
 
   return posts
     .filter((post) => post.published)
