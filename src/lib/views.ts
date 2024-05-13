@@ -7,12 +7,11 @@ export type Views = {
 } | null
 
 export async function incrementViews(slug: string) : Promise<number> {
-  const views = await redis.hincrby('views', slug, 1)
-  return views
+  return await redis.hincrby('views', slug, 1)
 }
 
 export async function getViews(slug: string) : Promise<number> {
-  const views = await redis.hget('views', slug)
+  const views = await redis.hget('views', slug)  
   return Number(views)
 }
 
