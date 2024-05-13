@@ -31,11 +31,12 @@ export async function getAllPosts() {
   })
 
   const views = await getAllViews()
-  const posts = await Promise.all(postFilenames.map(importPost))
-    .then((posts) => posts.map((post): PostWithSlug => {
-      post.views = views?.[post.slug] ?? 0
-      return post
-  }))
+  const posts = await Promise.all(postFilenames.map(importPost)).then((posts) =>
+    posts.map((post) => ({
+      ...post,
+      views: views?.[post.slug] || 0,
+    })),
+  )
 
   return posts
     .filter((post) => post.published)
