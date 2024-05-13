@@ -37,7 +37,6 @@ export async function getAllPosts() {
       return post
   }))
 
-  console.log(posts)
   return posts
     .filter((post) => post.published)
     .sort((a, z) => +new Date(z.date) - +new Date(a.date))
