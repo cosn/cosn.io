@@ -32,7 +32,7 @@ export async function getAllPosts() {
 
   const posts = await Promise.all(postFilenames.map(importPost))
   const views = await getAllViews()
-  console.log(`views`, views)
+  console.log(`views`, views, posts.length)
 
   return posts
     .filter((post) => post.published)
