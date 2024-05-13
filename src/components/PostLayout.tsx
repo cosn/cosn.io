@@ -1,12 +1,13 @@
 'use client'
 
-import { useContext } from 'react'
-import { useRouter } from 'next/navigation'
+import { useContext, useEffect, useRef, useState } from 'react'
+import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
 import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { type PostWithSlug } from '@/lib/posts'
+import { incrementViews } from '@/lib/views'
 import { formatDate } from '@/lib/formatDate'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -29,8 +30,31 @@ export function PostLayout({
   post: PostWithSlug
   children: React.ReactNode
 }) {
-  let router = useRouter()
-  let { previousPathname } = useContext(AppContext)
+  const router = useRouter()
+  const { previousPathname } = useContext(AppContext)
+
+  const searchParams = useSearchParams()
+  const showViews = searchParams.get('showviews') === 'true'
+
+  const path = usePathname()
+  if (!post.slug) {
+    post.slug = path.split('/').pop()!
+  }
+
+  const [views, setViews] = useState(0)
+  const logViewRef = useRef(false)
+  
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'development') return;
+
+    if (!logViewRef.current) {
+      incrementViews(post.slug)
+        .then((views) => setViews(views))
+        .catch((error) => console.error('Failed to increment views', error))
+
+      logViewRef.current = true
+    }
+  })
 
   return (
     <Container className="mt-16 lg:mt-32">
@@ -57,6 +81,7 @@ export function PostLayout({
               >
                 <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                 <span className="ml-3">{formatDate(post.date)}</span>
+                {showViews && <span className="ml-3">[{views} views]</span>}
               </time>
             </header>
             <Prose className="mt-8" data-mdx-content>

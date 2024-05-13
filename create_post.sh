@@ -27,7 +27,6 @@ export const metadata = {
 
 export default (props) => <PostLayout post={post} {...props} />
 
-
 EOF
 
 echo "done"
