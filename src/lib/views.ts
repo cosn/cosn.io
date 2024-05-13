@@ -7,7 +7,7 @@ export type Views = {
 } | null
 
 export async function incrementViews(slug: string) : Promise<number> {
-  return await redis.hincrby('views', slug, 1)
+  return redis.hincrby('views', slug, 1)
 }
 
 export async function getViews(slug: string) : Promise<number> {
@@ -16,5 +16,5 @@ export async function getViews(slug: string) : Promise<number> {
 }
 
 export async function getAllViews() : Promise<Views> {
-  return await redis.hgetall('views')
+  return redis.hgetall('views')
 }
