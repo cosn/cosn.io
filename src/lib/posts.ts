@@ -35,7 +35,7 @@ export async function getAllPosts() {
   console.log(`posts: ${posts.length}`)
   const views = await redis.hgetall('views')
   console.log(`views: ${views}`)
-  const files = fs.readdirSync(process.cwd())
+  const files = fs.readdirSync('./next')
   console.log(`files: ${files}`)
 
   return posts
