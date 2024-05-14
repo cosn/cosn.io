@@ -32,7 +32,7 @@ export async function getAllPosts() {
 
   const posts = await Promise.all(postFilenames.map(importPost))
   console.log(`posts: ${posts.length}`)
-  const views = redis.hgetall('views')
+  const views = await redis.hgetall('views')
   console.log(`views: ${views}`)
 
   return posts
