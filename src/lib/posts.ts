@@ -1,5 +1,4 @@
 import glob from 'fast-glob'
-import redis from '@/lib/redis'
 import fs from 'fs'
 
 interface Post {
@@ -33,8 +32,6 @@ export async function getAllPosts() {
 
   const posts = await Promise.all(postFilenames.map(importPost))
   console.log(`posts: ${posts.length}`)
-  const views = await redis.hgetall('views')
-  console.log(`views: ${views}`)
   const files = fs.readdirSync('./')
   console.log(`files: ${files}`)
 
