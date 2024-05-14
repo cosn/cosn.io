@@ -50,7 +50,6 @@ export const metadata: Metadata = {
 
 export default async function PostsIndex() {
   const posts = await getAllPosts()
-  console.log(`posts`, posts.length)
 
   return (
     <SimpleLayout

@@ -1,5 +1,5 @@
 import glob from 'fast-glob'
-import { getAllViews } from './views'
+import { getAllViews } from '@/api/views'
 
 interface Post {
   title: string

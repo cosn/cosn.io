@@ -7,7 +7,7 @@ import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
 import { type PostWithSlug } from '@/lib/posts'
-import { incrementViews } from '@/lib/views'
+import { incrementViews } from '@/api/views'
 import { formatDate } from '@/lib/formatDate'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {

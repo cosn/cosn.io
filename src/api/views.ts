@@ -1,6 +1,6 @@
 'use server'
 
-import redis from './redis'
+import redis from '@/lib/redis'
 
 export type Views = {
   [id: string]: number
