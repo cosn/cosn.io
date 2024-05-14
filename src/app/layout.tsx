@@ -1,4 +1,5 @@
 import { type Metadata } from 'next'
+import Script from 'next/script'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
@@ -7,7 +8,6 @@ import '@/styles/tailwind.css'
 
 import { meta } from '@/lib/meta'
 
-import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const blogName = meta.title
@@ -54,7 +54,7 @@ export default function RootLayout({
             <Layout>{children}</Layout>
           </div>
         </Providers>
-        <Analytics />
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
         <SpeedInsights />
       </body>
     </html>
