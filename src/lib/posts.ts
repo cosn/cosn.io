@@ -1,5 +1,5 @@
 import glob from 'fast-glob'
-import { getAllViews } from '@/api/views'
+import { getAllViews } from '@/lib/views'
 
 interface Post {
   title: string
@@ -30,9 +30,13 @@ export async function getAllPosts() {
     cwd: './src/app/posts',
   })
 
-  const posts = await Promise.all(postFilenames.map(importPost))
   const views = await getAllViews()
-  console.log(`views`, views, posts.length)
+  const posts = await Promise.all(postFilenames.map(importPost)).then((posts) =>
+    posts.map((post) => ({
+      ...post,
+      views: views?.[post.slug] || 0,
+    })),
+  )
 
   return posts
     .filter((post) => post.published)
