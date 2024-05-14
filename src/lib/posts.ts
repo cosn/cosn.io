@@ -1,4 +1,5 @@
 import glob from 'fast-glob'
+import redis from '@/lib/redis'
 
 interface Post {
   title: string
@@ -30,6 +31,9 @@ export async function getAllPosts() {
   })
 
   const posts = await Promise.all(postFilenames.map(importPost))
+  console.log(`posts: ${posts.length}`)
+  const views = redis.hgetall('views')
+  console.log(`views: ${views}`)
 
   return posts
     .filter((post) => post.published)
