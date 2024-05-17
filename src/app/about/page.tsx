@@ -65,7 +65,7 @@ export default function About() {
               I'm an engineer, operator, and entrepreneur.
             </p>
             <p>
-              Most recently I was the CTO of <span className="font-bold">Brex</span>, where I scaled the company from 40 to over 1,000 employees and hundreds of millions in annual revenue. I've also worked at <span className="font-bold">Stripe</span> as an early engineer and manager, building core global payments infrastructure, and launching the Stripe Terminal product. I started my career at <span className="font-bold">Microsoft</span>, working on the initial versions of Azure and Office365.
+              Most recently I was the CTO of <span className="font-bold">Brex</span>, where I scaled the company from 40 to over 1,000 employees and hundreds of millions in annual revenue. I've also worked at <span className="font-bold">Stripe</span> as an early engineer and manager, building core global payments infrastructure, and launching the Stripe Terminal product. I started my career at <span className="font-bold">Microsoft</span>, working on the early versions of Azure and Office365.
             </p>
             <p>
               Moving places has helped me embrace changes of varying magnitudes. I've so far lived in the following cities:
