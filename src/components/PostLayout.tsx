@@ -41,7 +41,7 @@ export function PostLayout({
     post.slug = path.split('/').pop()!
   }
 
-  const [views, setViews] = useState(0)
+  const [views, setViews] = useState<number | null>(null)
   const logViewRef = useRef(false)
   
   useEffect(() => {
@@ -81,7 +81,7 @@ export function PostLayout({
               >
                 <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                 <span className="ml-3">{formatDate(post.date)}</span>
-                {showViews && <span className="ml-3">[{views} views]</span>}
+                {showViews && views !== null && <span className="ml-3">[{views} views]</span>}
               </time>
             </header>
             <Prose className="mt-8" data-mdx-content>
