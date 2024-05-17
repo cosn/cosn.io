@@ -71,9 +71,9 @@ export default function About() {
               Moving places has helped me embrace changes of varying magnitudes. I've so far lived in the following cities:
             </p>
             <ul className="list-disc ml-8">
-              <li>Bucharest, Romania</li>
-              <li>Deatsville, AL</li>
-              <li>Philadelphia, PA</li>
+              <li>Born in Bucharest, Romania</li>
+              <li>Exchange student in Deatsville, AL</li>
+              <li>University in Philadelphia, PA</li>
               <li>Vancouver, BC</li>
               <li>Seattle, WA</li>
               <li>San Francisco, CA</li>
@@ -105,22 +105,22 @@ export default function About() {
               <li className="mt-2"><span className="italic">Smaller teams are better</span>
                 <ul className="list-disc ml-4">
                   <li>There's less overhead, leads to faster decisions, and is more fun for everyone involved</li>
-                  <li>Scarcity of resources increases better prioritization and focus</li>
-                  <li>The failure modes from under-staffing tend to be much less severe than those from over-hiring</li>
+                  <li>Scarcity of resources increases focus and leads to better prioritization</li>
+                  <li>The failure modes of under-staffing tend to be much less severe than those of over-hiring</li>
                 </ul>
               </li>
               <li className="mt-2"><span className="italic">Extreme positions often lead to suboptimal outcomes</span>
                 <ul className="list-disc ml-4">
                   <li>Most often you're simply balancing multiple variables, which leads to various tradeoffs</li>
                   <li>People tend to over-simplify problems (also people, i.e. "person X is good/bad")</li>
-                  <li>In a conflict, the truth is somewhere in the middle</li>
+                  <li>In conflict, the truth is somewhere in the middle</li>
                   <li>Few situations are zero-sum, and you should strive to avoid them</li>
                 </ul>
               </li>
               <li className="mt-2"><span className="italic">EQ tends to be underrated</span>
                 <ul className="list-disc ml-4">
                   <li>Individuals have unique reactions, so no matter how great one is at pattern-matching, outcomes are highly dependent on the mix of individuals involved</li>
-                  <li>Being able to accurately read the room is a significant advantage, especially in tech</li>
+                  <li>Being able to read the room can give you a significant advantage, especially in tech</li>
                   <li>Learn to trust your instincts, and constantly fine-tune them with new experiences</li>
                 </ul>
               </li>
