@@ -4,13 +4,13 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 
-import logoFallback from '@/images/logos/portfolio.svg'
 import logoArc from '@/images/logos/arc.svg'
 import logoAtoB from '@/images/logos/atob.svg'
 import logoBend from '@/images/logos/bend.svg'
 import logoBridge from '@/images/logos/bridge.svg'
 import logoBuk from '@/images/logos/buk.svg'
 import logoCoverbase from '@/images/logos/coverbase.svg'
+import logoDidero from '@/images/logos/didero.png'
 import logoDosu from '@/images/logos/dosu.svg'
 import logoFragment from '@/images/logos/fragment.png'
 import logoLassie from '@/images/logos/lassie.jpg'
@@ -18,12 +18,13 @@ import logoLogicloop from '@/images/logos/logicloop.svg'
 import logoModernloop from '@/images/logos/modernloop.svg'
 import logoOpine from '@/images/logos/opine.svg'
 import logoOptech from '@/images/logos/optech.svg'
+import logoFallback from '@/images/logos/portfolio.svg'
 import logoRepool from '@/images/logos/repool.svg'
+import logoRunloop from '@/images/logos/runloop.svg'
 import logoSavvy from '@/images/logos/savvy.svg'
 import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
 import logoXflow from '@/images/logos/xflow.svg'
-import logoDidero from '@/images/logos/didero.png'
 
 const investments = [
   {
@@ -164,6 +165,13 @@ const investments = [
       'Supply Chain x AI',
     link: 'https://didero.ai',
     logo: logoDidero,
+  },
+  {
+    name: 'Runloop',
+    description:
+      'Supply Chain x AI',
+    link: 'https://runloop.ai',
+    logo: logoRunloop,
   },
 ]
 
