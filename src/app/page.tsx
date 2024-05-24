@@ -20,7 +20,6 @@ import { formatDate } from '@/lib/formatDate'
 import { metadata } from './layout.tsx'
 import { meta } from '@/lib/meta'
 
-
 function Post({ post }: { post: PostWithSlug }) {
   return (
     <Card as="article">
