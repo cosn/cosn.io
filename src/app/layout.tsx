@@ -4,7 +4,7 @@ import Script from 'next/script'
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
-import '@/styles/tailwind.css'
+import '@/styles/globals.css'
 
 import { meta } from '@/lib/meta'
 
