@@ -1,14 +1,25 @@
 import { type Metadata } from 'next'
 import Script from 'next/script'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
 
-import '@/styles/tailwind.css'
+import '@/styles/globals.css'
+import { Inter, Roboto_Mono } from 'next/font/google'
 
 import { meta } from '@/lib/meta'
+import { cn } from '@/lib/utils'
 
-import { SpeedInsights } from "@vercel/speed-insights/next"
+const fontInter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+const fontRoboto = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
+})
 
 const blogName = meta.title
 
@@ -48,7 +59,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className="flex h-full bg-zinc-50 dark:bg-black">
+      <body className={cn(
+        "flex h-full bg-zinc-50 dark:bg-black font-mono",
+        fontInter.variable, fontRoboto.variable
+        )}>
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

@@ -1,12 +1,10 @@
-import typographyPlugin from '@tailwindcss/typography'
-import { type Config } from 'tailwindcss'
-
-import typographyStyles from './typography'
+import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
 export default {
-  content: ['./src/**/*.{js,jsx,ts,tsx,md,mdx,svg}'],
   darkMode: 'selector',
-  plugins: [typographyPlugin],
+  content: ['./src/**/*.{js,jsx,ts,tsx,md,mdx,svg}'],
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
   theme: {
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
@@ -23,6 +21,34 @@ export default {
       '8xl': ['6rem', { lineHeight: '1' }],
       '9xl': ['8rem', { lineHeight: '1' }],
     },
-    typography: typographyStyles,
+    typography: require('./typography'),
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', ...fontFamily.sans],
+        mono: ['var(--font-roboto-mono)', ...fontFamily.mono],
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+    },
   },
 } satisfies Config
+
