@@ -171,7 +171,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
           paddingLeft: theme('spacing.6'),
         },
         li: {
-          marginTop: theme('spacing.3'),
+          marginTop: theme('spacing.2'),
           marginBottom: theme('spacing.2'),
           paddingLeft: theme('spacing[3.5]'),
         },
