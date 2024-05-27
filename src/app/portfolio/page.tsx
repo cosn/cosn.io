@@ -199,7 +199,7 @@ export default function Portfolio() {
     >
       <ul
         role="list"
-        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 font-sans"
+        className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
       >
         {investments.sort((a, z) => (a.name.toLowerCase() > z.name.toLowerCase()) ? 1 : -1).map((project) => (
           <Card as="li" key={project.name}>

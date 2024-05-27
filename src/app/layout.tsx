@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
       <body className={cn(
-        "flex h-full bg-zinc-50 dark:bg-black font-mono",
+        "flex h-full bg-zinc-50 dark:bg-black font-sans",
         fontInter.variable, fontRoboto.variable
         )}>
         <Providers>

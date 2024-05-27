@@ -43,7 +43,7 @@ export function PostLayout({
 
   const [views, setViews] = useState<number | null>(null)
   const logViewRef = useRef(false)
-  
+
   useEffect(() => {
     if (process.env.NODE_ENV === 'development') return;
 
@@ -72,7 +72,7 @@ export function PostLayout({
           )}
           <article>
             <header className="flex flex-col">
-              <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100 font-sans">
+              <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
                 {post.title}
               </h1>
               <time
@@ -84,7 +84,7 @@ export function PostLayout({
                 {showViews && views !== null && <span className="ml-3">[{views} views]</span>}
               </time>
             </header>
-            <Prose className="mt-8 font-sans" data-mdx-content>
+            <Prose className="mt-8" data-mdx-content>
               {children}
             </Prose>
           </article>
