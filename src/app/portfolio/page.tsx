@@ -195,7 +195,7 @@ export default function Portfolio() {
   return (
     <SimpleLayout
       title={metadata.description!}
-      intro="As an angel investor and Sequoia scout, I invest in a few seed and pre-seed startups each year, mainly to help the community and learn. Here are some of my past investments. If you’re an early-stage founder and think I can help, please email me your pitch deck, and let’s take it from there."
+      intro="As an angel investor and Sequoia scout, I invest in a handful of seed and pre-seed startups each year. I'm motivated by supporting the community and learning from the process. If you're an early-stage founder and believe I could be helpful, feel free to email me your pitch deck, and we can take it from there. Below are some of my previous investments."
     >
       <ul
         role="list"
