@@ -4,9 +4,11 @@
   "description": "Pragmatic Optimism, Cosmin's personal blog.",
   "scripts": {
     "dev": "next dev",
+    "test": "pnpm run test:unit",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:unit": "vitest"
   },
   "keywords": [
     "cos",
@@ -22,6 +24,7 @@
     "email": "cos@cosn.io",
     "url": "https://cosn.io"
   },
+  "type": "module",
   "dependencies": {
     "@headlessui/react": "^1.7.19",
     "@mapbox/rehype-prism": "^0.9.0",
@@ -50,16 +53,21 @@
   "devDependencies": {
     "@cosn/tsc": "^1.4.1",
     "@tailwindcss/typography": "^0.5.13",
+    "@testing-library/react": "^15.0.7",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/webpack-env": "^1.18.5",
+    "@vitejs/plugin-react": "^4.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.3",
+    "jsdom": "^24.1.0",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.14",
     "sharp": "0.33.1",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
   }
 }

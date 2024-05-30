@@ -1,7 +1,9 @@
+import { meta } from '@/lib/meta'
 import assert from 'assert'
 import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
-import { meta } from '@/lib/meta'
+import fs from 'fs'
+import path from 'path'
 
 export async function GET(req: Request) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
@@ -27,14 +29,11 @@ export async function GET(req: Request) {
     },
   })
 
-  const postIds = require
-    //@ts-ignore
-    .context('../posts', true, /\/page\.mdx$/)
-    .keys()
-    //@ts-ignore
-    .filter((key) => key.startsWith('./'))
-    //@ts-ignore
-    .map((key) => key.slice(2).replace(/\/page\.mdx$/, ''))
+  const postsDirectory = path.join(process.cwd(), 'src/app/posts')
+  const postIds = fs
+    .readdirSync(postsDirectory, { withFileTypes: true })
+    .filter((dirent) => dirent.isDirectory())
+    .map((dirent) => dirent.name)
 
   for (const id of postIds) {
     const url = String(new URL(`/posts/${id}`, req.url))
