@@ -53,6 +53,7 @@
   "devDependencies": {
     "@cosn/tsc": "^1.4.1",
     "@tailwindcss/typography": "^0.5.13",
+    "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@types/node": "^20.12.12",
     "@types/react": "^18.3.3",

@@ -26,13 +26,12 @@ const mfai = vi.fn()
 mfs.mockResolvedValue(mr)
 mr.text.mockResolvedValue(ma)
 vi.stubGlobal('fetch', mfs)
-// @ts-ignore
+
 fs.readdirSync = vi.fn(() => [
   { name: 'post1', isDirectory: () => true },
   { name: 'post2', isDirectory: () => true },
 ])
 
-// @ts-ignore
 vi.spyOn(cheerio, 'load').mockImplementation(() => {
   const $ = vi.fn().mockReturnValue({
     first: vi.fn().mockReturnThis(),
