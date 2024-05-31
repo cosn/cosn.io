@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Pragmatic Optimism, Cosmin's personal blog.",
   "scripts": {
-    "dev": "next dev",
-    "test": "pnpm run test:unit",
     "build": "next build",
+    "dev": "next dev",
+    "test": "vitest run",
+    "test:unit": "vitest",
+    "test:e2e": "playwright test",
     "start": "next start",
-    "lint": "next lint",
-    "test:unit": "vitest"
+    "lint": "next lint"
   },
   "keywords": [
     "cos",
@@ -52,6 +53,7 @@
   },
   "devDependencies": {
     "@cosn/tsc": "^1.4.1",
+    "@playwright/test": "^1.44.1",
     "@tailwindcss/typography": "^0.5.13",
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
