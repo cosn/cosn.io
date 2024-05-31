@@ -73,7 +73,7 @@ describe('GET', () => {
     expect(response.headers.get('cache-control')).toBe('s-maxage=31556952')
 
     const responseBody = await response.text()
-    expect(responseBody).toContain('<rss')
+    expect(responseBody).toEqual('<rss>Mocked RSS feed</rss>')
   })
 
   it('correctly processes post data', async () => {
