@@ -9,7 +9,6 @@ import { Prose } from '@/components/Prose'
 import { type PostWithSlug } from '@/lib/posts'
 import { incrementViews } from '@/api/views'
 import { formatDate } from '@/lib/formatDate'
-import logger from '@/lib/logger'
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -40,7 +39,6 @@ export function PostLayout({
   const path = usePathname()
   if (!post.slug) {
     post.slug = path.split('/').pop()!
-    logger.verbose(`PostLayout: post.slug not provided, using pathname ${post.slug}`)
   }
 
   const [views, setViews] = useState<number | null>(null)
@@ -52,7 +50,7 @@ export function PostLayout({
     if (!logViewRef.current) {
       incrementViews(post.slug)
         .then((views) => setViews(views))
-        .catch((error) => logger.error('Failed to increment views', error))
+        .catch((error) => console.error('Failed to increment views', error))
 
       logViewRef.current = true
     }
