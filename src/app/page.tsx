@@ -19,7 +19,6 @@ import { type PostWithSlug, getAllPosts } from '@/lib/posts'
 import { formatDate } from '@/lib/formatDate'
 import { metadata } from './layout.tsx'
 import { meta } from '@/lib/meta'
-import logger from '@/lib/logger.ts'
 
 function Post({ post }: { post: PostWithSlug }) {
   return (
@@ -78,7 +77,6 @@ function Photos() {
 
 export default async function Home() {
   let posts = (await getAllPosts()).slice(0, 4)
-  logger.info("HELLO WORLD!")
 
   return (
     <>
