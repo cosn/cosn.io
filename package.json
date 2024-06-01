@@ -48,7 +48,8 @@
     "react-dom": "^18.3.1",
     "remark-gfm": "^4.0.0",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "@cosn/tsc": "^1.4.1",
