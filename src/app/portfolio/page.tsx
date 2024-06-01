@@ -18,6 +18,7 @@ import logoLogicloop from '@/images/logos/logicloop.svg'
 import logoModernloop from '@/images/logos/modernloop.svg'
 import logoOpine from '@/images/logos/opine.svg'
 import logoOptech from '@/images/logos/optech.svg'
+import logoParcha from '@/images/logos/parcha.svg'
 import logoFallback from '@/images/logos/portfolio.svg'
 import logoRepool from '@/images/logos/repool.svg'
 import logoRunloop from '@/images/logos/runloop.svg'
@@ -162,16 +163,23 @@ const investments = [
   {
     name: 'Didero',
     description:
-      'Supply Chain x AI',
+      'Supply Chain x AI.',
     link: 'https://didero.ai',
     logo: logoDidero,
   },
   {
     name: 'Runloop',
     description:
-      'Supply Chain x AI',
+      'The Ultimate Python Workflow Engine for AI.',
     link: 'https://runloop.ai',
     logo: logoRunloop,
+  },
+  {
+    name: 'Parcha',
+    description:
+      'Accelerate financial innovation by empowering cutting-edge banks and fintechs to efficiently onboard more customers faster with stronger compliance.',
+    link: 'https://parcha.com',
+    logo: logoParcha,
   },
 ]
 
