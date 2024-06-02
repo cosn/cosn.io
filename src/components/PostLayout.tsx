@@ -1,14 +1,17 @@
 'use client'
 
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { useContext, useEffect, useRef, useState } from 'react'
-import { useRouter, usePathname, useSearchParams } from 'next/navigation'
 
+import { incrementViews } from '@/api/views'
 import { AppContext } from '@/app/providers'
 import { Container } from '@/components/Container'
 import { Prose } from '@/components/Prose'
-import { type PostWithSlug } from '@/lib/posts'
-import { incrementViews } from '@/api/views'
 import { formatDate } from '@/lib/formatDate'
+import { type PostWithSlug } from '@/lib/posts'
+
+import pino from 'pino'
+const logger = pino({ name: 'PostLayout' })
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -50,7 +53,7 @@ export function PostLayout({
     if (!logViewRef.current) {
       incrementViews(post.slug)
         .then((views) => setViews(views))
-        .catch((error) => console.error('Failed to increment views', error))
+        .catch((error) => logger.error('Failed to increment views', error))
 
       logViewRef.current = true
     }
