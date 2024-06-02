@@ -1,8 +1,9 @@
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { type Metadata } from 'next'
 import Script from 'next/script'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 import { Providers } from '@/app/providers'
+import { ClerkProvider } from '@clerk/nextjs'
 import { Layout } from '@/components/Layout'
 
 import '@/styles/globals.css'
@@ -58,19 +59,21 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className={cn(
-        "flex h-full bg-zinc-50 dark:bg-black font-sans",
-        fontInter.variable, fontRoboto.variable
-        )}>
-        <Providers>
-          <div className="flex w-full">
-            <Layout>{children}</Layout>
-          </div>
-        </Providers>
-        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
-        <SpeedInsights />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+        <body className={cn(
+          "flex h-full bg-zinc-50 dark:bg-black font-sans",
+          fontInter.variable, fontRoboto.variable
+          )}>
+          <Providers>
+            <div className="flex w-full">
+              <Layout>{children}</Layout>
+            </div>
+          </Providers>
+          <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
