@@ -44,6 +44,7 @@
     "lucide-react": "^0.379.0",
     "next": "^14.2.3",
     "next-themes": "^0.2.1",
+    "pino": "^9.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "remark-gfm": "^4.0.0",
