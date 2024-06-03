@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -15,14 +14,12 @@ import image1 from '@/images/photos/hike.png'
 import image4 from '@/images/photos/ski.png'
 import image2 from '@/images/photos/stage.png'
 import image5 from '@/images/photos/sushi.png'
-import { formatDate } from '@/lib/formatDate'
 import { meta } from '@/lib/meta'
-import { type PostWithSlug } from '@/lib/posts'
 import { siteUrl } from '@/lib/utils.ts'
 import { metadata } from './layout.tsx'
 import logger from '@/lib/logger.ts'
 
-function Post({ post }: { post: PostWithSlug }) {
+/* function Post({ post }: { post: PostWithSlug }) {
   return (
     <Card as="article">
       <Card.Title href={`/posts/${post.slug}`}>
@@ -35,7 +32,7 @@ function Post({ post }: { post: PostWithSlug }) {
       <Card.Cta>Read post</Card.Cta>
     </Card>
   )
-}
+} */
 
 function SocialLink({
   icon: Icon,
