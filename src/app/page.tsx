@@ -77,7 +77,7 @@ function Photos() {
 export default async function Home() {
   const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
   logger.info(`COSCOS res: ${res}`)
-  const data = await res.json()
+  const data = await res.text()
   logger.info(`COSCOS data: ${data}`)
 
   return (
