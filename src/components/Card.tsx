@@ -26,6 +26,7 @@ export function Card<T extends React.ElementType = 'div'>({
 
   return (
     <Component
+      excluedClerk={true}
       className={clsx(className, 'group relative flex flex-col items-start')}
     >
       {children}

@@ -3,14 +3,16 @@ import { Container } from '@/components/Container'
 export function SimpleLayout({
   title,
   intro,
+  excludeClerk: excludeClerk,
   children,
 }: {
   title: string
   intro: string
+  excludeClerk?: boolean
   children?: React.ReactNode
 }) {
   return (
-    <Container className="mt-16 sm:mt-32">
+    <Container excludeClerk={excludeClerk} className="mt-16 sm:mt-32">
       <header className="max-w-4xl">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100 font-mono">
           {title}

@@ -385,6 +385,7 @@ export function Header() {
               className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
             />
             <Container
+              excludeClerk={true}
               className="top-0 order-last -mb-3 pt-3"
               style={{
                 position:
@@ -425,6 +426,7 @@ export function Header() {
           }}
         >
           <Container
+            excludeClerk={true}
             className="top-[var(--header-top,theme(spacing.6))] w-full"
             style={{
               position:

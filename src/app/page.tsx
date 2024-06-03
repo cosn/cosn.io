@@ -109,7 +109,7 @@ export default async function Home() {
         </div>
       </Container>
       <Photos />
-      <Container className="mt-24 md:mt-28">
+      <Container excludeClerk={true} className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col gap-16 lg:col-span-2">
             {posts.map((post) => (

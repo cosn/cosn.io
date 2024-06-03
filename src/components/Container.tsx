@@ -1,5 +1,6 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const ContainerOuter = forwardRef<
   React.ElementRef<'div'>,
@@ -27,13 +28,21 @@ export const ContainerInner = forwardRef<
   )
 })
 
-export const Container = forwardRef<
-  React.ElementRef<typeof ContainerOuter>,
-  React.ComponentPropsWithoutRef<typeof ContainerOuter>
->(function Container({ children, ...props }, ref) {
-  return (
-    <ContainerOuter ref={ref} {...props}>
-      <ContainerInner>{children}</ContainerInner>
-    </ContainerOuter>
-  )
-})
+interface ContainerProps extends React.ComponentPropsWithoutRef<typeof ContainerOuter> {
+  excludeClerk?: boolean;
+}
+
+export const Container = forwardRef<React.ElementRef<typeof ContainerOuter>, ContainerProps>
+  (function Container({ children, excludeClerk: excludeClerk, ...props }, ref) {
+    const content = (
+      <ContainerOuter ref={ref} {...props}>
+        <ContainerInner>{children}</ContainerInner>
+      </ContainerOuter>
+    )
+
+    return excludeClerk ? content : (
+      <ClerkProvider>
+        {content}
+      </ClerkProvider>
+    )
+  })
