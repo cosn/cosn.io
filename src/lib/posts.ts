@@ -1,3 +1,4 @@
+'use server'
 import glob from 'fast-glob'
 
 interface Post {
