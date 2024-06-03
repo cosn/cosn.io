@@ -35,7 +35,7 @@ export async function GET(req: Request) {
     const html = await (await fetch(url)).text()
     const $ = cheerio.load(html)
 
-    const publicUrl = siteUrl(`/posts/${id}`)
+    const publicUrl = siteUrl(`posts/${id}`)
     const post = $('article').first()
     const title = post.find('h1').first().text()
     const date = post.find('time').first().attr('datetime')

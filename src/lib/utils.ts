@@ -15,6 +15,10 @@ export function siteUrl(path?: string) {
   let url = site
 
   if (path) {
+    if (path.startsWith('/')) {
+      path = path.slice(1)
+    }
+
     url = `${site}/${path}`
   }
 
