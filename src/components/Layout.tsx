@@ -1,6 +1,6 @@
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
-import { ClerkProvier } from '@clerk/nextjs'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -12,9 +12,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </div>
       <div className="relative flex w-full flex-col">
         <Header />
-        <ClerkProvier>
+        <ClerkProvider>
           <main className="flex-auto">{children}</main>
-        </ClerkProvier>
+        </ClerkProvider>
         <Footer />
       </div>
     </>
