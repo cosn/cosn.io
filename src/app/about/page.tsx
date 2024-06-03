@@ -66,7 +66,7 @@ export default async function About() {
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100 font-mono">
               <SignedIn>
-                Hi <span className="font-bold">{user?.firstName}</span>, I'm Cos
+                Hi {user?.firstName}, I'm Cos
               </SignedIn>
               <SignedOut>
                 Hello, I'm Cos
