@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export function siteUrl(path?: string) {
+export function siteUrl(...paths: string[]) {
   const site = process.env.NEXT_PUBLIC_SITE_URL
 
   if (!site) {
@@ -14,12 +14,15 @@ export function siteUrl(path?: string) {
 
   let url = site
 
-  if (path) {
-    if (path.startsWith('/')) {
-      path = path.slice(1)
-    }
+  if (paths.length > 0) {
+    const cleanPaths = paths.map((path) => {
+      while (path.startsWith('/')) {
+        path = path.slice(1)
+      }
+      return path
+    })
 
-    url = `${site}/${path}`
+    url = `${site}/${cleanPaths.join('/')}`
   }
 
   return url
