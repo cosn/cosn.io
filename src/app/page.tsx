@@ -78,7 +78,8 @@ function Photos() {
 
 export default async function Home() {
   const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
-  const posts: PostWithSlug[] = await res.json().then((posts) => posts.slice(0, 4))
+  const data = await res.json()
+  const posts : PostWithSlug[] = data.posts.slice(0, 4)
 
   return (
     <>

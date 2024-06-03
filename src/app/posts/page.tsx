@@ -51,7 +51,8 @@ export const metadata: Metadata = {
 
 export default async function PostsIndex() {
   const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
-  const posts: PostWithSlug[] = await res.json()
+  const data = await res.json()
+  const posts: PostWithSlug[] = data.posts
 
   return (
     <SimpleLayout
