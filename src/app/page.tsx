@@ -80,7 +80,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container className="mt-9">
+      <Container excludeClerk={true} className="mt-9">
         <div className="max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100 font-mono">
             {meta.title}
