@@ -53,7 +53,6 @@ export default async function PostsIndex() {
 
   return (
     <SimpleLayout
-      excludeClerk={true}
       title={metadata.description!}
       intro="I've generally found written form to be the clearest way to discuss complex subjects."
     >
