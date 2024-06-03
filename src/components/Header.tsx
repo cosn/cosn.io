@@ -138,7 +138,7 @@ function MobileNavigation(
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
-                {nav.map((i: any, key: number) => 
+                {nav.map((i: any, key: number) =>
                   <MobileNavItem key={key} href={i.href}>{i.label}</MobileNavItem>
                 )}
               </ul>
@@ -183,7 +183,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   return (
     <nav {...props}>
       <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
-        {nav.map((i: any, key: number) => 
+        {nav.map((i: any, key: number) =>
           <NavItem key={key} href={i.href}>{i.label}</NavItem>
         )}
       </ul>
@@ -385,7 +385,6 @@ export function Header() {
               className="order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]"
             />
             <Container
-              excludeClerk={true}
               className="top-0 order-last -mb-3 pt-3"
               style={{
                 position:
@@ -426,7 +425,6 @@ export function Header() {
           }}
         >
           <Container
-            excludeClerk={true}
             className="top-[var(--header-top,theme(spacing.6))] w-full"
             style={{
               position:

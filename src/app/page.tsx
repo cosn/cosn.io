@@ -80,7 +80,7 @@ export default async function Home() {
 
   return (
     <>
-      <Container excludeClerk={true} className="mt-9">
+      <Container className="mt-9">
         <div className="max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100 font-mono">
             {meta.title}
@@ -109,7 +109,7 @@ export default async function Home() {
         </div>
       </Container>
       <Photos />
-      <Container excludeClerk={true} className="mt-24 md:mt-28">
+      <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col gap-16 lg:col-span-2">
             {posts.map((post) => (

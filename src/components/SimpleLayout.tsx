@@ -1,4 +1,5 @@
 import { Container } from '@/components/Container'
+import { ClerkProvider } from '@clerk/nextjs'
 
 export function SimpleLayout({
   title,
@@ -11,8 +12,8 @@ export function SimpleLayout({
   excludeClerk?: boolean
   children?: React.ReactNode
 }) {
-  return (
-    <Container excludeClerk={excludeClerk} className="mt-16 sm:mt-32">
+  const container = (
+    <Container className="mt-16 sm:mt-32">
       <header className="max-w-4xl">
         <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100 font-mono">
           {title}
@@ -23,5 +24,11 @@ export function SimpleLayout({
       </header>
       {children && <div className="mt-16 sm:mt-20">{children}</div>}
     </Container>
+  )
+
+  return excludeClerk ? container : (
+    <ClerkProvider>
+      {container}
+    </ClerkProvider>
   )
 }
