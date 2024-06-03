@@ -9,7 +9,7 @@ import '@/styles/globals.css'
 import { Inter, Roboto_Mono } from 'next/font/google'
 
 import { meta } from '@/lib/meta'
-import { cn } from '@/lib/utils'
+import { cn, siteUrl } from '@/lib/utils'
 
 const fontInter = Inter({
   subsets: ['latin'],
@@ -32,13 +32,13 @@ export const metadata: Metadata = {
   description: meta.description,
   alternates: {
     types: {
-      'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
+      'application/rss+xml': `${siteUrl('feed.xml')}`,
     },
   },
   openGraph: {
     title: blogName,
     siteName: blogName,
-    url: process.env.NEXT_PUBLIC_SITE_URL,
+    url: siteUrl(),
     description: meta.description,
     type: 'website',
   },
@@ -62,7 +62,7 @@ export default function RootLayout({
       <body className={cn(
         "flex h-full bg-zinc-50 dark:bg-black font-sans",
         fontInter.variable, fontRoboto.variable
-        )}>
+      )}>
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>

@@ -14,6 +14,7 @@ import portraitImage from '@/images/portrait.jpg'
 import logger from '@/lib/logger'
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { currentUser } from '@clerk/nextjs/server'
+import { siteUrl } from '@/lib/utils'
 
 function SocialLink({
   className,
@@ -46,16 +47,17 @@ export const metadata: Metadata = {
 }
 
 export default async function About() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
   const user = await currentUser()
-  logger.info('user', user)
+  logger.verbose('user', user)
+
+  const redirectUrl = siteUrl('about')
 
   return (
     <Container className="mt-16 sm:mt-32">
       <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
         <div className="lg:pl-20">
           <div className="max-w-xs px-2.5 lg:max-w-none">
-            <Link href={`/sign-in?redirect_url=${siteUrl}/about`}>
+            <Link href={`/sign-in?redirect_url=${redirectUrl}`}>
               <Image
                 src={portraitImage}
                 alt="Headshot"

@@ -1,4 +1,5 @@
 import { meta } from '@/lib/meta'
+import { siteUrl } from '@/lib/utils'
 import assert from 'assert'
 import * as cheerio from 'cheerio'
 import { Feed } from 'feed'
@@ -6,12 +7,6 @@ import fs from 'fs'
 import path from 'path'
 
 export async function GET(req: Request) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-
-  if (!siteUrl) {
-    throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
-  }
-
   const feed = new Feed({
     title: meta.title,
     description: meta.description,
@@ -19,13 +14,13 @@ export async function GET(req: Request) {
       name: meta.author,
       email: meta.email,
     },
-    id: siteUrl,
-    link: siteUrl,
-    image: `${siteUrl}/favicon.ico`,
-    favicon: `${siteUrl}/favicon.ico`,
+    id: siteUrl(),
+    link: siteUrl(),
+    image: `${siteUrl('favicon.ico')}`,
+    favicon: `${siteUrl('favicon.ico')}`,
     copyright: `All rights reserved ${new Date().getFullYear()}`,
     feedLinks: {
-      rss2: `${siteUrl}/feed.xml`,
+      rss2: `${siteUrl('feed.xml')}`,
     },
   })
 
@@ -40,7 +35,7 @@ export async function GET(req: Request) {
     const html = await (await fetch(url)).text()
     const $ = cheerio.load(html)
 
-    const publicUrl = `${siteUrl}/posts/${id}`
+    const publicUrl = siteUrl(`/posts/${id}`)
     const post = $('article').first()
     const title = post.find('h1').first().text()
     const date = post.find('time').first().attr('datetime')
