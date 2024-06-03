@@ -20,6 +20,7 @@ import { meta } from '@/lib/meta'
 import { type PostWithSlug } from '@/lib/posts'
 import { siteUrl } from '@/lib/utils.ts'
 import { metadata } from './layout.tsx'
+import logger from '@/lib/logger.ts'
 
 function Post({ post }: { post: PostWithSlug }) {
   return (
@@ -78,7 +79,9 @@ function Photos() {
 
 export default async function Home() {
   const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
-  const posts: PostWithSlug[] = await res.json().then((posts) => posts.slice(0, 4))
+  logger.info(`COSCOS res: ${res}`)
+  const data = await res.json()
+  logger.info(`COSCOS data: ${data}`)
 
   return (
     <>
@@ -114,9 +117,6 @@ export default async function Home() {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col gap-16 lg:col-span-2">
-            {posts.map((post) => (
-              <Post key={post.slug} post={post} />
-            ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
           </div>
