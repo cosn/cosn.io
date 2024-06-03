@@ -1,6 +1,5 @@
 import { forwardRef } from 'react'
 import clsx from 'clsx'
-import { ClerkProvider } from '@clerk/nextjs'
 
 export const ContainerOuter = forwardRef<
   React.ElementRef<'div'>,
