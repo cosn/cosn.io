@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
-import clsx from 'clsx'
 
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
@@ -10,15 +10,16 @@ import {
   MailIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/hike.png'
-import image2 from '@/images/photos/stage.png'
 import image3 from '@/images/photos/desk.png'
+import image1 from '@/images/photos/hike.png'
 import image4 from '@/images/photos/ski.png'
+import image2 from '@/images/photos/stage.png'
 import image5 from '@/images/photos/sushi.png'
-import { type PostWithSlug, getAllPosts } from '@/lib/posts'
 import { formatDate } from '@/lib/formatDate'
-import { metadata } from './layout.tsx'
 import { meta } from '@/lib/meta'
+import { type PostWithSlug } from '@/lib/posts'
+import { siteUrl } from '@/lib/utils.ts'
+import { metadata } from './layout.tsx'
 
 function Post({ post }: { post: PostWithSlug }) {
   return (
@@ -76,7 +77,8 @@ function Photos() {
 }
 
 export default async function Home() {
-  let posts = (await getAllPosts()).slice(0, 4)
+  const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
+  const posts: PostWithSlug[] = await res.json().then((posts) => posts.slice(0, 4))
 
   return (
     <>
@@ -223,7 +225,7 @@ export default async function Home() {
 //         <dt className="sr-only">Date</dt>
 //         <dd
 //           className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-//           aria-label={`${startLabel} until ${endLabel}`}
+//           aria-label={`${ startLabel } until ${ endLabel }`}
 //         >
 //           <time dateTime={startDate}>{startLabel}</time>{' '}
 //           <span aria-hidden="true">—</span>{' '}

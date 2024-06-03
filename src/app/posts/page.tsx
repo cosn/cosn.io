@@ -2,8 +2,9 @@ import { type Metadata } from 'next'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import { type PostWithSlug, getAllPosts } from '@/lib/posts'
 import { formatDate } from '@/lib/formatDate'
+import { type PostWithSlug } from '@/lib/posts'
+import { siteUrl } from '@/lib/utils'
 
 declare global {
   namespace JSX {
@@ -49,11 +50,11 @@ export const metadata: Metadata = {
 }
 
 export default async function PostsIndex() {
-  const posts = await getAllPosts()
+  const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
+  const posts: PostWithSlug[] = await res.json()
 
   return (
     <SimpleLayout
-      excludeClerk={true}
       title={metadata.description!}
       intro="I've generally found written form to be the clearest way to discuss complex subjects."
     >
