@@ -11,6 +11,7 @@ import {
   XIcon,
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
+import logger from '@/lib/logger'
 import { ClerkProvider, SignedIn, SignedOut } from '@clerk/nextjs'
 import { currentUser } from '@clerk/nextjs/server'
 
@@ -45,8 +46,9 @@ export const metadata: Metadata = {
 }
 
 export default async function About() {
-  const user = await currentUser()
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
+  const user = await currentUser()
+  logger.info('user', user)
 
   return (
     <ClerkProvider>
