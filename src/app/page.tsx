@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { Card } from '@/components/Card.tsx'
 import { Container } from '@/components/Container'
 import {
   GitHubIcon,
@@ -14,12 +15,13 @@ import image1 from '@/images/photos/hike.png'
 import image4 from '@/images/photos/ski.png'
 import image2 from '@/images/photos/stage.png'
 import image5 from '@/images/photos/sushi.png'
+import { formatDate } from '@/lib/formatDate.ts'
 import { meta } from '@/lib/meta'
+import type { PostWithSlug } from '@/lib/posts.ts'
 import { siteUrl } from '@/lib/utils.ts'
 import { metadata } from './layout.tsx'
-import logger from '@/lib/logger.ts'
 
-/* function Post({ post }: { post: PostWithSlug }) {
+function Post({ post }: { post: PostWithSlug }) {
   return (
     <Card as="article">
       <Card.Title href={`/posts/${post.slug}`}>
@@ -32,7 +34,7 @@ import logger from '@/lib/logger.ts'
       <Card.Cta>Read post</Card.Cta>
     </Card>
   )
-} */
+}
 
 function SocialLink({
   icon: Icon,
@@ -76,10 +78,8 @@ function Photos() {
 
 export default async function Home() {
   const res = await fetch(siteUrl('api/posts'), { cache: 'force-cache' })
-  logger.info(`COSCOS res: ${res}`)
   const data = await res.json()
-  const posts = data.posts
-  logger.info(`COSCOS data: ${posts}`)
+  const posts : PostWithSlug[] = data.posts.slice(0, 4)
 
   return (
     <>
@@ -115,6 +115,9 @@ export default async function Home() {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-3">
           <div className="flex flex-col gap-16 lg:col-span-2">
+            {posts.map((post) => (
+              <Post key={post.slug} post={post} />
+            ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
           </div>
