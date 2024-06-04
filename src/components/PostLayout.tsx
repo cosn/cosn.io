@@ -53,7 +53,7 @@ export function PostLayout({
     if (!logViewRef.current) {
       incrementViews(post.slug)
         .then((views) => setViews(views))
-        .catch((error) => logger.error('Failed to increment views', error))
+        .catch((error) => logger.error('Failed to increment views', { error }))
 
       logViewRef.current = true
     }

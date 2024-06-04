@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 
 export default async function About() {
   const user = await currentUser()
-  logger.verbose('user', user)
+  logger.verbose('user', { user })
 
   const redirectUrl = siteUrl('about')
 
