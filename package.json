@@ -2,6 +2,7 @@
   "name": "blog",
   "version": "0.0.1",
   "description": "Pragmatic Optimism, Cosmin's personal blog.",
+  "type": "module",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
