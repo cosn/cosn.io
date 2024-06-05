@@ -43,7 +43,7 @@ describe('PostLayout', () => {
     )
 
     expect(screen.getByText('Test Post')).toBeInTheDocument()
-    expect(screen.getByText('May 30, 2023')).toBeInTheDocument()
+    expect(screen.getByText('May 2023')).toBeInTheDocument()
   })
 
   it('does not render the back button when previousPathname is not provided', () => {

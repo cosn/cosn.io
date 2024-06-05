@@ -16,7 +16,7 @@ describe('formatDate', () => {
   it('should format the date correctly in the "en-US" format', () => {
     const date = '2023-05-15'
     const formattedDate = formatDate(date)
-    expect(formattedDate).toBe('May 15, 2023')
+    expect(formattedDate).toBe('May 2023')
   })
 
   it('should return "Earlier today" for a date earlier today', () => {
@@ -58,6 +58,6 @@ describe('formatDate', () => {
   it('should return the formatted date for dates older than a month', () => {
     const date = new Date(now - 60 * 24 * 60 * 60 * 1000).toISOString()
     const formattedDate = formatDate(date, true)
-    expect(formattedDate).toBe('April 2, 2024')
+    expect(formattedDate).toBe('April 2024')
   })
 })
