@@ -1,7 +1,6 @@
 export function formatDate(dateString: string, relative?: boolean): string {
   const date = new Date(`${dateString}`)
   const formattedDate = date.toLocaleDateString('en-US', {
-    day: 'numeric',
     month: 'long',
     year: 'numeric',
     timeZone: 'UTC',
