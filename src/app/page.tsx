@@ -77,9 +77,9 @@ function Photos() {
 }
 
 export default async function Home() {
-  const res = await fetch(siteUrl('api/posts'))
+  const res = await fetch(siteUrl('api/posts'), { next: { tags: ['posts'] } })
   const data = await res.json()
-  const posts : PostWithSlug[] = data.posts.slice(0, 4)
+  const posts: PostWithSlug[] = data.posts.slice(0, 4)
 
   return (
     <>
