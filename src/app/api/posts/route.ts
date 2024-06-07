@@ -6,7 +6,7 @@ import { NextRequest } from 'next/server'
 export async function GET(req: NextRequest) {
   const posts = await getAllPosts()
 
-  if (req.nextUrl.searchParams.get('tag') === 'posts') {
+  if (req.nextUrl.searchParams.get('revalidate') === 'true') {
     logger.verbose('Revalidating posts')
     revalidateTag('posts')
   }
