@@ -219,7 +219,7 @@ export default function typographyStyles({ theme }: PluginUtils) {
         // Horizontal rules
         hr: {
           marginTop: theme('spacing.20'),
-          marginBottom: theme('spacing.20'),
+          marginBottom: theme('spacing.10'),
           borderTopWidth: '1px',
           borderColor: 'var(--tw-prose-hr)',
           '@screen lg': {
