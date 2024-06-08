@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   twitter: {
     title: blogName,
     creator: '@getCos',
+    card: 'summary_large_image',
   },
 }
 
