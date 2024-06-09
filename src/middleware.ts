@@ -9,7 +9,7 @@ const handleApiTokenRoute = (req: NextRequest) => {
   const token = req.headers.get('X-API-TOKEN')
 
   if (!token || token !== process.env.API_TOKEN) {
-    logger.error('Unauthorized', { ip: req.ip, geo: req.geo, token: token })
+    logger.warn('Unauthorized', { ip: req.ip, geo: req.geo, token: token })
     return new Response('Unauthorized', { status: 401 })
   }
 
