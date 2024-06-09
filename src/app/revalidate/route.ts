@@ -1,16 +1,23 @@
-
 import logger from '@/lib/logger'
-import { revalidatePath } from 'next/cache'
+import { revalidatePath, revalidateTag } from 'next/cache'
 import { NextRequest } from 'next/server'
 
 export async function GET(req: NextRequest) {
-  let result = false
-  const path = req.nextUrl.searchParams.get('path')
-  if (path) {
-    logger.verbose('Revalidating posts', { path })
-    revalidatePath(path)
-    result = true
+  let targets: string[] = []
+
+  const revalidate = (param: string, revalidateFn: (item: string) => void) => {
+    const key = req.nextUrl.searchParams.get(param)
+    if (key) {
+      key.split(',').forEach((item) => {
+        logger.verbose(`Revalidating ${param.slice(0, -1)}`, { item })
+        revalidateFn(item)
+        targets.push(item)
+      })
+    }
   }
 
-  return Response.json({ revalidated: result })
+  revalidate('paths', revalidatePath)
+  revalidate('tags', revalidateTag)
+
+  return Response.json({ revalidated: targets })
 }
