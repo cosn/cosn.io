@@ -44,7 +44,7 @@ export function Footer() {
                 <SocialLink href="mailto:blog@cosn.io" icon={MailIcon}>
                   Send email
                 </SocialLink>
-                <SocialLink href="/feed.xml" icon={RssIcon}>
+                <SocialLink href="/rss" icon={RssIcon}>
                   Subscribe to RSS
                 </SocialLink>
               </div>

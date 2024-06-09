@@ -12,7 +12,7 @@ export function siteUrl(...paths: string[]) {
     throw Error('Missing NEXT_PUBLIC_SITE_URL environment variable')
   }
 
-  let url = site
+  let url = `${site}/`
 
   if (paths.length > 0) {
     const cleanPaths = paths.map((path) => {

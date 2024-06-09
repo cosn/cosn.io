@@ -22,7 +22,7 @@ describe('siteUrl', () => {
 
   it('should return the base site URL if no path is provided', () => {
     const url = siteUrl()
-    expect(url).toBe('http://localhost')
+    expect(url).toBe('http://localhost/')
   })
 
   it('should return the full URL with the provided path', () => {

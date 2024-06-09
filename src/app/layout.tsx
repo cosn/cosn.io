@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   description: meta.description,
   alternates: {
     types: {
-      'application/rss+xml': `${siteUrl('feed.xml')}`,
+      'application/rss+xml': `${siteUrl('rss')}`,
     },
   },
   openGraph: {

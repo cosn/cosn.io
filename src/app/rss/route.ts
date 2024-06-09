@@ -20,7 +20,7 @@ export async function GET(req: Request) {
     favicon: `${siteUrl('favicon.ico')}`,
     copyright: `All rights reserved ${new Date().getFullYear()}`,
     feedLinks: {
-      rss2: `${siteUrl('feed.xml')}`,
+      rss2: `${siteUrl('rss')}`,
     },
   })
 
