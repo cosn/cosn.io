@@ -1,4 +1,4 @@
-import { getAllPosts } from '@/api/posts'
+import { getAllPosts } from '@/lib/posts'
 import { siteUrl } from '@/lib/utils.ts'
 
 export default async function sitemap() {

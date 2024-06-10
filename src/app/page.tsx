@@ -2,7 +2,6 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { getAllPosts } from '@/api/posts'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
@@ -19,6 +18,7 @@ import image5 from '@/images/photos/sushi.png'
 import { formatDate } from '@/lib/formatDate'
 import { meta } from '@/lib/meta'
 import { type PostWithSlug } from '@/lib/posts'
+import { siteUrl } from '@/lib/utils.ts'
 import { metadata } from './layout.tsx'
 
 function Post({ post }: { post: PostWithSlug }) {
@@ -77,7 +77,9 @@ function Photos() {
 }
 
 export default async function Home() {
-  const posts = await getAllPosts().then((p) => p.slice(0, 4))
+  const res = await fetch(siteUrl('api/posts'), { next: { tags: ['posts'] } })
+  const data = await res.json()
+  const posts: PostWithSlug[] = data.posts.slice(0, 4)
 
   return (
     <>

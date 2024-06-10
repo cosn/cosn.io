@@ -1,10 +1,10 @@
 import { type Metadata } from 'next'
 
-import { getAllPosts } from '@/api/posts'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { formatDate } from '@/lib/formatDate'
 import { type PostWithSlug } from '@/lib/posts'
+import { siteUrl } from '@/lib/utils'
 
 declare global {
   namespace JSX {
@@ -50,7 +50,9 @@ export const metadata: Metadata = {
 }
 
 export default async function PostsIndex() {
-  const posts = await getAllPosts()
+  const res = await fetch(siteUrl('api/posts'), { next: { tags: ['posts'] } })
+  const data = await res.json()
+  const posts: PostWithSlug[] = data.posts
 
   return (
     <SimpleLayout
