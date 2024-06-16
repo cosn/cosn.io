@@ -10,7 +10,8 @@
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ."
   },
   "keywords": [
     "cos",
@@ -48,7 +49,7 @@
     "winston": "^3.13.0"
   },
   "devDependencies": {
-    "@cosn/tsc": "^1.5.2",
+    "@cosn/tsc": "^1.6.0",
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
