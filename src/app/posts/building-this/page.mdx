@@ -5,7 +5,7 @@ export const post = {
   date: '2024-06-07',
   title: 'Building cosn.io',
   description:
-    "As I've been transitioning away from my day-to-day duties at Brex over the past few months, I wanted to fill that time with things I've neglected, hoping to rebuild some habits before diving into my next adventure. Coding was high on that list, and the more I did it, the more I realized how much I'd missed it. This seemed like the perfect opportunity to scratch that itch and build some intuition around frontend development, so I decided to build a personal website as a playground."
+    "As I've been transitioning away from my day-to-day duties at Brex over the past few months, I wanted to fill that time with things I've neglected, hoping to rebuild some habits before diving into my next adventure. Coding was high on that list, and the more I did it, the more I realized how much I'd missed it. This seemed like the perfect opportunity to scratch that itch and build some intuition around frontend development, so I decided to build a personal website as a playground.",
 }
 
 export const metadata = {
@@ -33,10 +33,11 @@ One reflection from my time at Brex was that I've not managed to bridge the cult
 
 I'm a strong believer in using the right tools for the job. After several mentions of [Eleventy](https://11ty.dev/) and reading through their comprehensive documentation, I started building. It went quite well at first – I put together a few layouts using Nunjucks and Markdown templates, and had a basic skeleton up and running within two days. But by day three, I decided to abandon that path and look at Next and Remix instead. There were two reasons for this:
 
-1. The more I built, the more _specifically_ complex things became, particularly with Nunjucks and Eleventy modules.
+1. The more I built, the more *specifically* complex things became, particularly with Nunjucks and Eleventy modules.
 2. While that was all well and good, a big part of building this playground was to try out technologies I'd use beyond this specific (and arguably simplistic) use case.
 
 I couldn't see myself using Eleventy for anything other than a static website, which is what the framework is designed for. I wasn't getting the learning satisfaction I was craving, so I tacked.
+
 ## Next vs Remix
 
 To embrace the full-stack mantra, you really only have one language choice: JavaScript. And when working in a codebase at scale, I've found that a robust type system is necessary, so JavaScript -> TypeScript. It doesn't take much research to see that React has won the battle of frontend frameworks, and within that, the top React frameworks are Next and Remix. The holy war characteristics are reminiscent of Vi vs Emacs, Debian vs Ubuntu, MySQL vs PostgreSQL, Python vs Ruby, and so on. So I'll just point out a couple of personal observations and my rationale for the choice:
@@ -80,7 +81,7 @@ Once there's enough code, it's time to write some tests. [This page](https://ne
 
 Logging is yet another thing that's not needed for something like this but would be essential for anything serious, so I ended up rolling with both [Winston](https://github.com/winstonjs/winston) and [Pino](https://getpino.io/#/). Ultimately, more important than the logging framework is how you access said logs, and unfortunately, all popular services get very expensive very quickly.
 
-Every real application has users, and I'd really prefer to avoid rolling my own authN (or authZ, for that matter) in the future. This one was actually tougher than the rest because there _are_ differences, and it's hard to define or achieve an "optimal" solution. The solutions I looked at were [Firebase](https://firebase.google.com/products/auth), [Supabase](https://supabase.com/auth), [Auth.js](https://authjs.dev/), and [Clerk](https://clerk.com/):
+Every real application has users, and I'd really prefer to avoid rolling my own authN (or authZ, for that matter) in the future. This one was actually tougher than the rest because there *are* differences, and it's hard to define or achieve an "optimal" solution. The solutions I looked at were [Firebase](https://firebase.google.com/products/auth), [Supabase](https://supabase.com/auth), [Auth.js](https://authjs.dev/), and [Clerk](https://clerk.com/):
 
 - I wanted to stay away from Google services since I'm much more likely to use AWS vs GCP, so Firebase was the first to go.
 - I would have probably gone for Supabase for this specific instance (just like I ended up using Upstash), but much less likely in a production environment at scale, so I decided against it (but generally found it pretty great, and [Thor](https://x.com/thorwebdev) is amazing).
@@ -93,6 +94,7 @@ I ended up going with Clerk, and honestly, if the pricing model scales for your 
 Building this has been fun, and in terms of an "experimental playground," it has met the goal. I'm sure there will be more random things that I will want to dig into. For example, last week I was learning about and experimenting with fonts, and I'm curious to explore more advanced CSS techniques like animations and responsive design. Simultaneously, it has also increased my desire to write a few more posts over the summer (I've learned better than to commit to doing it while I have a demanding job). I'm also considering delving into topics like performance optimization and accessibility. The beauty of a playground like this is that the possibilities are endless, and I'm excited to see where my curiosity takes me next. If you have any suggestions for things I should try to add, or write about, please [send them over](mailto:blog@cosn.io).
 
 ---
+
 [0]: When I say "meaningful," I quite literally mean "the entire." I've reflected on this many years ago, but it's unfathomable that the main engineer for the sign-up flow when launching one of the biggest strategic investments at Microsoft was someone 2-3 years out of college. I tried to find some screenshots of said flow, but the closest I could get is the [start of the sign-up flow](https://web.archive.org/web/20111115021011/http://www.microsoft.com/windowsazure/free-trial/). It doesn't take a hyper-creative individual to imagine what that looked like after seeing this.
 
 [1]: When I joined, there wasn't any organizational structure in Engineering, but a small number of engineers were working on the dashboard and website. Frontend engineers had their own habits and routines, which was likely a coping mechanism for being the vast minority of engineers in the company.

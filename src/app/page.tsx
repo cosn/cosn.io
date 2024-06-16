@@ -24,9 +24,7 @@ import { metadata } from './layout.tsx'
 function Post({ post }: { post: PostWithSlug }) {
   return (
     <Card as="article">
-      <Card.Title href={`/posts/${post.slug}`}>
-        {post.title}
-      </Card.Title>
+      <Card.Title href={`/posts/${post.slug}`}>{post.title}</Card.Title>
       <Card.Eyebrow as="time" dateTime={post.date} decorate>
         {formatDate(post.date, true)}
       </Card.Eyebrow>
@@ -50,7 +48,13 @@ function SocialLink({
 }
 
 function Photos() {
-  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  const rotations = [
+    'rotate-2',
+    '-rotate-2',
+    'rotate-2',
+    'rotate-2',
+    '-rotate-2',
+  ]
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -85,14 +89,18 @@ export default async function Home() {
     <>
       <Container className="mt-9">
         <div className="max-w-4xl">
-          <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100 font-mono">
+          <h1 className="font-mono text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100">
             {meta.title}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             {metadata.description!}
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="https://twitter.com/getCos" aria-label="Follow on X" icon={XIcon} />
+            <SocialLink
+              href="https://twitter.com/getCos"
+              aria-label="Follow on X"
+              icon={XIcon}
+            />
             <SocialLink
               href="https://github.com/cosn"
               aria-label="Follow on GitHub"
@@ -119,8 +127,7 @@ export default async function Home() {
               <Post key={post.slug} post={post} />
             ))}
           </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
-          </div>
+          <div className="space-y-10 lg:pl-16 xl:pl-24"></div>
         </div>
       </Container>
     </>

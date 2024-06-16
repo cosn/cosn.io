@@ -1,9 +1,9 @@
 'use client'
 
-import { Container } from "@/components/Container";
-import { SignIn } from "@clerk/nextjs";
-import { dark } from "@clerk/themes";
-import { useTheme } from "next-themes";
+import { Container } from '@/components/Container'
+import { SignIn } from '@clerk/nextjs'
+import { dark } from '@clerk/themes'
+import { useTheme } from 'next-themes'
 
 export default function AuthSignIn() {
   const resolvedTheme = useTheme().resolvedTheme

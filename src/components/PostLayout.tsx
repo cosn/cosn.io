@@ -48,7 +48,7 @@ export function PostLayout({
   const logViewRef = useRef(false)
 
   useEffect(() => {
-    if (process.env.NODE_ENV === 'development') return;
+    if (process.env.NODE_ENV === 'development') return
 
     if (!logViewRef.current) {
       incrementViews(post.slug)
@@ -84,7 +84,9 @@ export function PostLayout({
               >
                 <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500" />
                 <span className="ml-3">{formatDate(post.date)}</span>
-                {showViews && views !== null && <span className="ml-3">[{views} views]</span>}
+                {showViews && views !== null && (
+                  <span className="ml-3">[{views} views]</span>
+                )}
               </time>
             </header>
             <Prose className="mt-8" data-mdx-content>

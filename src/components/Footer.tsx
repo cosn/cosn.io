@@ -38,7 +38,10 @@ export function Footer() {
                 <SocialLink href="https://github.com/cosn" icon={GitHubIcon}>
                   Follow on GitHub
                 </SocialLink>
-                <SocialLink href="https://linkedin.com/in/cosminn" icon={LinkedInIcon}>
+                <SocialLink
+                  href="https://linkedin.com/in/cosminn"
+                  icon={LinkedInIcon}
+                >
                   Follow on LinkedIn
                 </SocialLink>
                 <SocialLink href="mailto:blog@cosn.io" icon={MailIcon}>

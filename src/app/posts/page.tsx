@@ -9,7 +9,10 @@ import { siteUrl } from '@/lib/utils'
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      article: React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+      article: React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >
     }
   }
 }
@@ -18,9 +21,7 @@ function Post({ post }: { post: PostWithSlug }) {
   return (
     <article className="md:grid md:grid-cols-4 md:items-baseline">
       <Card className="md:col-span-3">
-        <Card.Title href={`/posts/${post.slug}`}>
-          {post.title}
-        </Card.Title>
+        <Card.Title href={`/posts/${post.slug}`}>{post.title}</Card.Title>
         <Card.Eyebrow
           as="time"
           dateTime={post.date}
@@ -46,7 +47,7 @@ function Post({ post }: { post: PostWithSlug }) {
 export const metadata: Metadata = {
   title: 'Posts',
   description:
-    'Long-form thoughts on building, leadership, and arbitrary topics'
+    'Long-form thoughts on building, leadership, and arbitrary topics',
 }
 
 export default async function PostsIndex() {

@@ -30,8 +30,7 @@ import logoXflow from '@/images/logos/xflow.svg'
 const investments = [
   {
     name: 'Arc',
-    description:
-      'Empowering startups with modern financial products.',
+    description: 'Empowering startups with modern financial products.',
     link: 'https://joinarc.com',
     logo: logoArc,
   },
@@ -44,36 +43,31 @@ const investments = [
   },
   {
     name: 'Repool',
-    description:
-      'Building the future of hedge fund solutions.',
+    description: 'Building the future of hedge fund solutions.',
     link: 'https://repool.com',
     logo: logoRepool,
   },
   {
     name: 'AtoB',
-    description:
-      'Helping fleets manage their costs.',
+    description: 'Helping fleets manage their costs.',
     link: 'https://atob.com',
     logo: logoAtoB,
   },
   {
     name: 'Wholesail',
-    description:
-      'Modernizing B2B Trade.',
+    description: 'Modernizing B2B Trade.',
     link: 'https://paywholesail.com',
     logo: logoWholesail,
   },
   {
     name: 'Fragment',
-    description:
-      'The database for money.',
+    description: 'The database for money.',
     link: 'https://fragment.dev',
     logo: logoFragment,
   },
   {
     name: 'StandardFleet',
-    description:
-      'Effortless EV fleet management.',
+    description: 'Effortless EV fleet management.',
     link: 'https://standardfleet.com',
     logo: logoStandardFleet,
   },
@@ -93,8 +87,7 @@ const investments = [
   },
   {
     name: 'Coverbase',
-    description:
-      'Fully flexible risk assessment workflows.',
+    description: 'Fully flexible risk assessment workflows.',
     link: 'https://coverbase.ai',
     logo: logoCoverbase,
   },
@@ -107,8 +100,7 @@ const investments = [
   },
   {
     name: 'Duna',
-    description:
-      'Rethinking business identity.',
+    description: 'Rethinking business identity.',
     link: 'https://duna.io',
   },
   {
@@ -127,8 +119,7 @@ const investments = [
   },
   {
     name: 'Modernloop',
-    description:
-      'Efficiently transform your candidate experience.',
+    description: 'Efficiently transform your candidate experience.',
     link: 'https://modernloop.com',
     logo: logoModernloop,
   },
@@ -141,8 +132,7 @@ const investments = [
   },
   {
     name: 'Xflow',
-    description:
-      'Powering international payments for businesses.',
+    description: 'Powering international payments for businesses.',
     link: 'https://xflowpay.com',
     logo: logoXflow,
   },
@@ -162,15 +152,13 @@ const investments = [
   },
   {
     name: 'Didero',
-    description:
-      'Supply Chain x AI.',
+    description: 'Supply Chain x AI.',
     link: 'https://didero.ai',
     logo: logoDidero,
   },
   {
     name: 'Runloop',
-    description:
-      'The Ultimate Python Workflow Engine for AI.',
+    description: 'The Ultimate Python Workflow Engine for AI.',
     link: 'https://runloop.ai',
     logo: logoRunloop,
   },
@@ -209,25 +197,31 @@ export default function Portfolio() {
         role="list"
         className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
       >
-        {investments.sort((a, z) => (a.name.toLowerCase() > z.name.toLowerCase()) ? 1 : -1).map((investment) => (
-          <Card as="li" key={investment.name}>
-            <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0">
-              <Image
-                src={investment.logo ?? logoFallback}
-                alt=""
-                className="h-8 w-8"
-              />
-            </div>
-            <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={investment.link} target="_blank">{investment.name}</Card.Link>
-            </h2>
-            <Card.Description>{investment.description}</Card.Description>
-            <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-              <LinkIcon className="h-6 w-6 flex-none" />
-              <span className="ml-2">{investment.link.slice(8)}</span>
-            </p>
-          </Card>
-        ))}
+        {investments
+          .sort((a, z) =>
+            a.name.toLowerCase() > z.name.toLowerCase() ? 1 : -1,
+          )
+          .map((investment) => (
+            <Card as="li" key={investment.name}>
+              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:ring-0">
+                <Image
+                  src={investment.logo ?? logoFallback}
+                  alt=""
+                  className="h-8 w-8"
+                />
+              </div>
+              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+                <Card.Link href={investment.link} target="_blank">
+                  {investment.name}
+                </Card.Link>
+              </h2>
+              <Card.Description>{investment.description}</Card.Description>
+              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
+                <LinkIcon className="h-6 w-6 flex-none" />
+                <span className="ml-2">{investment.link.slice(8)}</span>
+              </p>
+            </Card>
+          ))}
       </ul>
     </SimpleLayout>
   )

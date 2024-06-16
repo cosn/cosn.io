@@ -39,7 +39,7 @@ describe('PostLayout', () => {
     render(
       <PostLayout post={post}>
         <div>Post content</div>
-      </PostLayout>
+      </PostLayout>,
     )
 
     expect(screen.getByText('Test Post')).toBeInTheDocument()
@@ -54,7 +54,7 @@ describe('PostLayout', () => {
         <PostLayout post={post}>
           <div>Post content</div>
         </PostLayout>
-      </AppContext.Provider>
+      </AppContext.Provider>,
     )
 
     expect(screen.queryByLabelText('Go back to posts')).not.toBeInTheDocument()
@@ -68,7 +68,7 @@ describe('PostLayout', () => {
         <PostLayout post={post}>
           <div>Post content</div>
         </PostLayout>
-      </AppContext.Provider>
+      </AppContext.Provider>,
     )
 
     expect(screen.getByLabelText('Go back to posts')).toBeInTheDocument()
@@ -84,7 +84,7 @@ describe('PostLayout', () => {
         <PostLayout post={post}>
           <div>Post content</div>
         </PostLayout>
-      </AppContext.Provider>
+      </AppContext.Provider>,
     )
 
     fireEvent.click(screen.getByLabelText('Go back to posts'))
@@ -95,7 +95,7 @@ describe('PostLayout', () => {
     render(
       <PostLayout post={post}>
         <div>Post content</div>
-      </PostLayout>
+      </PostLayout>,
     )
 
     expect(screen.getByText('Post content')).toBeInTheDocument()
@@ -107,7 +107,7 @@ describe('PostLayout', () => {
     render(
       <PostLayout post={post}>
         <div>Post content</div>
-      </PostLayout>
+      </PostLayout>,
     )
 
     expect(incrementViews).toHaveBeenCalledWith('test-post')
@@ -119,7 +119,7 @@ describe('PostLayout', () => {
     render(
       <PostLayout post={post}>
         <div>Post content</div>
-      </PostLayout>
+      </PostLayout>,
     )
 
     expect(incrementViews).not.toHaveBeenCalled()
@@ -134,7 +134,7 @@ describe('PostLayout', () => {
     render(
       <PostLayout post={post}>
         <div>Post content</div>
-      </PostLayout>
+      </PostLayout>,
     )
 
     expect(await screen.findByText('[10 views]')).toBeInTheDocument()
@@ -149,7 +149,7 @@ describe('PostLayout', () => {
     render(
       <PostLayout post={post}>
         <div>Post content</div>
-      </PostLayout>
+      </PostLayout>,
     )
 
     expect(screen.queryByText(/views/)).not.toBeInTheDocument()

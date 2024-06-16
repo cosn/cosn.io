@@ -1,4 +1,4 @@
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { type Metadata } from 'next'
 import Script from 'next/script'
 
@@ -26,8 +26,7 @@ const blogName = meta.title
 export const metadata: Metadata = {
   title: {
     template: `%s - ${blogName}`,
-    default:
-      `${blogName} - Ideas, observations, thoughts`,
+    default: `${blogName} - Ideas, observations, thoughts`,
   },
   description: meta.description,
   alternates: {
@@ -60,10 +59,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <body className={cn(
-        "flex h-full bg-zinc-50 dark:bg-black font-sans",
-        fontInter.variable, fontRoboto.variable
-      )}>
+      <body
+        className={cn(
+          'flex h-full bg-zinc-50 font-sans dark:bg-black',
+          fontInter.variable,
+          fontRoboto.variable,
+        )}
+      >
         <Providers>
           <div className="flex w-full">
             <Layout>{children}</Layout>
