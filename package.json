@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Pragmatic Optimism, Cosmin's personal blog.",
   "type": "module",
+  "prettier": "@cosn/tsc/prettier",
   "scripts": {
     "build": "next build",
     "dev": "next dev",
@@ -49,7 +50,7 @@
     "winston": "^3.13.0"
   },
   "devDependencies": {
-    "@cosn/tsc": "^1.6.0",
+    "@cosn/tsc": "^1.6.1",
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
