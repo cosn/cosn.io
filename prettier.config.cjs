@@ -1,6 +1,9 @@
 /** @type {import('prettier').Options} */
 module.exports = {
-  singleQuote: true,
+  arrowParens: 'always',
   semi: false,
+  singleQuote: true,
+  trailingComma: 'all',
   plugins: ['prettier-plugin-tailwindcss'],
+  tailwindFunctions: ['clsx', 'cn'],
 }
