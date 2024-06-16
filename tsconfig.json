@@ -1,5 +1,5 @@
 {
-  "extends": "@cosn/tsc/base-web.json",
+  "extends": "@cosn/tsc/tsconfig-web",
   "compilerOptions": {
     "plugins": [
       {
