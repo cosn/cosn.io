@@ -11,12 +11,12 @@
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint --fix .",
     "format": "prettier --write .",
     "prepare": "husky"
   },
   "lint-staged": {
-    "*": "prettier --ignore-unknown --write",
+    "*": "prettier --write",
     "*.{js,jsx,ts,tsx,mjs,cjs}": "eslint --fix"
   },
   "keywords": [
@@ -38,7 +38,6 @@
     "@clerk/themes": "^2.1.9",
     "@headlessui/react": "^1.7.19",
     "@upstash/redis": "^1.31.5",
-    "@vercel/analytics": "^1.3.1",
     "@vercel/speed-insights": "^1.0.12",
     "cheerio": "1.0.0-rc.12",
     "class-variance-authority": "^0.7.0",
@@ -57,7 +56,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@cosn/tsc": "^1.7.0",
+    "@cosn/tsc": "^1.8.1",
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
@@ -67,7 +66,7 @@
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^15.0.7",
     "@types/mdx": "^2.0.13",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.3",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/webpack-env": "^1.18.5",

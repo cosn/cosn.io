@@ -1,10 +1,10 @@
-import { meta } from '@/lib/meta'
-import { siteUrl } from '@/lib/utils'
 import assert from 'assert'
-import * as cheerio from 'cheerio'
-import { Feed } from 'feed'
 import fs from 'fs'
 import path from 'path'
+import * as cheerio from 'cheerio'
+import { Feed } from 'feed'
+import { meta } from '@/lib/meta'
+import { siteUrl } from '@/lib/utils'
 
 export async function GET(req: Request) {
   const feed = new Feed({

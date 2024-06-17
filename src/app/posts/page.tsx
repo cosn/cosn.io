@@ -6,7 +6,6 @@ import { formatDate } from '@/lib/formatDate'
 import { type PostWithSlug } from '@/lib/posts'
 import { siteUrl } from '@/lib/utils'
 
-/* eslint-disable @typescript-eslint/no-namespace */
 declare global {
   namespace JSX {
     interface IntrinsicElements {

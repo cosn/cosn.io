@@ -1,3 +1,5 @@
+import { SignedIn, SignedOut } from '@clerk/nextjs'
+import { currentUser } from '@clerk/nextjs/server'
 import clsx from 'clsx'
 import { type Metadata } from 'next'
 import Image from 'next/image'
@@ -12,8 +14,6 @@ import {
 } from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 import logger from '@/lib/logger'
-import { SignedIn, SignedOut } from '@clerk/nextjs'
-import { currentUser } from '@clerk/nextjs/server'
 import { siteUrl } from '@/lib/utils'
 
 function SocialLink({

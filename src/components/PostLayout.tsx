@@ -1,6 +1,7 @@
 'use client'
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import pino from 'pino'
 import { useContext, useEffect, useRef, useState } from 'react'
 
 import { incrementViews } from '@/api/views'
@@ -10,7 +11,6 @@ import { Prose } from '@/components/Prose'
 import { formatDate } from '@/lib/formatDate'
 import { type PostWithSlug } from '@/lib/posts'
 
-import pino from 'pino'
 const logger = pino({ name: 'PostLayout' })
 
 function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {

@@ -1,12 +1,11 @@
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { type Metadata } from 'next'
+import { Inter, Roboto_Mono } from 'next/font/google'
 import Script from 'next/script'
+import '@/styles/globals.css'
 
 import { Providers } from '@/app/providers'
 import { Layout } from '@/components/Layout'
-
-import '@/styles/globals.css'
-import { Inter, Roboto_Mono } from 'next/font/google'
 
 import { meta } from '@/lib/meta'
 import { cn, siteUrl } from '@/lib/utils'

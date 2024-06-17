@@ -2,6 +2,7 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { metadata } from './layout.tsx'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
@@ -19,7 +20,6 @@ import { formatDate } from '@/lib/formatDate'
 import { meta } from '@/lib/meta'
 import { type PostWithSlug } from '@/lib/posts'
 import { siteUrl } from '@/lib/utils.ts'
-import { metadata } from './layout.tsx'
 
 function Post({ post }: { post: PostWithSlug }) {
   return (

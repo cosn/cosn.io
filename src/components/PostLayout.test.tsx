@@ -1,9 +1,9 @@
-import { beforeEach, describe, it, expect, vi } from 'vitest'
 import { render, screen, fireEvent, cleanup } from '@testing-library/react'
 import { useRouter, usePathname, useSearchParams } from 'next/navigation'
-import { AppContext } from '@/app/providers'
-import { incrementViews } from '@/api/views'
+import { beforeEach, describe, it, expect, vi } from 'vitest'
 import { PostLayout } from './PostLayout'
+import { incrementViews } from '@/api/views'
+import { AppContext } from '@/app/providers'
 
 vi.mock('next/navigation', () => ({
   useRouter: vi.fn(),

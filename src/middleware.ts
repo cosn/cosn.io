@@ -1,5 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
-import { NextRequest } from 'next/server'
+import { type NextRequest } from 'next/server'
 import pino from 'pino'
 
 const logger = pino({ name: 'middleware' })

@@ -1,6 +1,6 @@
-import logger from '@/lib/logger'
 import { revalidatePath, revalidateTag } from 'next/cache'
-import { NextRequest } from 'next/server'
+import { type NextRequest } from 'next/server'
+import logger from '@/lib/logger'
 
 export async function GET(req: NextRequest) {
   const targets: string[] = []

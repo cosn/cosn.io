@@ -1,9 +1,9 @@
 'use client'
 
-import { Container } from '@/components/Container'
 import { SignUp } from '@clerk/nextjs'
 import { dark } from '@clerk/themes'
 import { useTheme } from 'next-themes'
+import { Container } from '@/components/Container'
 
 export default function AuthSignUp() {
   const resolvedTheme = useTheme().resolvedTheme

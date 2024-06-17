@@ -1,5 +1,5 @@
-import * as cheerio from 'cheerio'
 import fs from 'fs'
+import * as cheerio from 'cheerio'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { GET } from './route'
 
