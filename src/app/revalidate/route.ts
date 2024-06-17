@@ -3,7 +3,7 @@ import { revalidatePath, revalidateTag } from 'next/cache'
 import { NextRequest } from 'next/server'
 
 export async function GET(req: NextRequest) {
-  let targets: string[] = []
+  const targets: string[] = []
 
   const revalidate = (param: string, revalidateFn: (item: string) => void) => {
     const key = req.nextUrl.searchParams.get(param)
