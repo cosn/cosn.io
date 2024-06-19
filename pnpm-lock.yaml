@@ -69,8 +69,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@cosn/tsc':
-        specifier: ^1.9.1
-        version: 1.9.1(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.4.5)(vitest@1.6.0(@types/node@20.14.5)(jsdom@24.1.0)(terser@5.31.1))
+        specifier: ^1.9.2
+        version: 1.9.2(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.4.5)(vitest@1.6.0(@types/node@20.14.5)(jsdom@24.1.0)(terser@5.31.1))
       '@mapbox/rehype-prism':
         specifier: ^0.9.0
         version: 0.9.0
@@ -543,10 +543,10 @@ packages:
       }
     engines: { node: '>=v18' }
 
-  '@cosn/tsc@1.9.1':
+  '@cosn/tsc@1.9.2':
     resolution:
       {
-        integrity: sha512-Kjbn+gx2uxF9DvEl4cLvZRWGm+3jOyMau6LoYP0yuIzd5Lz1O4sdYQAe2q/fgjf0UXTJ46NRTzhhCgxWRuT7yQ==,
+        integrity: sha512-Kf3+Sr9LqJjLMpVuCoMh0mxWyscGTxgVKCPx5WOjXmie4+L1CM3PDsWRfBwXI82IZpDrNClZjQd0QJ2kaVrGhA==,
       }
 
   '@dabh/diagnostics@2.0.3':
@@ -7600,7 +7600,7 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@cosn/tsc@1.9.1(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.4.5)(vitest@1.6.0(@types/node@20.14.5)(jsdom@24.1.0)(terser@5.31.1))':
+  '@cosn/tsc@1.9.2(@types/eslint@8.56.10)(eslint@8.57.0)(prettier@3.3.2)(typescript@5.4.5)(vitest@1.6.0(@types/node@20.14.5)(jsdom@24.1.0)(terser@5.31.1))':
     dependencies:
       '@eslint/js': 9.5.0
       eslint-config-prettier: 9.1.0(eslint@8.57.0)
