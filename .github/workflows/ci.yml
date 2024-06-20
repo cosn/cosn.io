@@ -23,5 +23,5 @@ jobs:
         with:
           node-version: lts/*
           cache: 'pnpm'
-      - run: turbo build
-      - run: turbo test
+      - run: pnpm exec turbo build
+      - run: pnpm exec turbo test
