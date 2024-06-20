@@ -7,6 +7,17 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
     mdxRs: true,
+    turbo: {
+      resolveExtensions: [
+        '.mdx',
+        '.tsx',
+        '.ts',
+        '.jsx',
+        '.js',
+        '.mjs',
+        '.json',
+      ],
+    },
   },
   swcMinify: true,
 }

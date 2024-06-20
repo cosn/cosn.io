@@ -19,3 +19,4 @@ yarn-error.log*
 /blob-report/
 /playwright/.cache/
 *.log
+.turbo
