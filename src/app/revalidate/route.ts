@@ -2,7 +2,7 @@ import { revalidatePath, revalidateTag } from 'next/cache'
 import { type NextRequest } from 'next/server'
 import logger from '@/lib/logger'
 
-export async function GET(req: NextRequest) {
+export async function POST(req: NextRequest) {
   const targets: string[] = []
 
   /* eslint-disable no-unused-vars */
