@@ -12,6 +12,7 @@ import logoBuk from '@/images/logos/buk.svg'
 import logoCoverbase from '@/images/logos/coverbase.svg'
 import logoDidero from '@/images/logos/didero.png'
 import logoDosu from '@/images/logos/dosu.svg'
+import logoDuna from '@/images/logos/duna.svg'
 import logoFragment from '@/images/logos/fragment.png'
 import logoLassie from '@/images/logos/lassie.jpg'
 import logoLogicloop from '@/images/logos/logicloop.svg'
@@ -102,6 +103,7 @@ const investments = [
     name: 'Duna',
     description: 'Rethinking business identity.',
     link: 'https://duna.io',
+    logo: logoDuna,
   },
   {
     name: 'Dosu',
