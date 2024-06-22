@@ -5,7 +5,6 @@ import logger from '@/lib/logger'
 export async function POST(req: NextRequest) {
   const targets: string[] = []
 
-  /* eslint-disable no-unused-vars */
   const revalidate = (param: string, revalidateFn: (_item: string) => void) => {
     const key = req.nextUrl.searchParams.get(param)
     if (key) {
