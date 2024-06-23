@@ -12,7 +12,7 @@ export interface PostWithSlug extends Post {
   slug: string
 }
 
-async function importPost(postFilename: string): Promise<PostWithSlug> {
+const importPost = async (postFilename: string): Promise<PostWithSlug> => {
   const { post } = (await import(`@/app/posts/${postFilename}`)) as {
     default: React.ComponentType
     post: Post
@@ -24,7 +24,7 @@ async function importPost(postFilename: string): Promise<PostWithSlug> {
   }
 }
 
-export async function getAllPosts() {
+export const getAllPosts = async () => {
   const postFilenames = await glob('*/page.mdx', {
     cwd: './src/app/posts',
   })

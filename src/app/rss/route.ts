@@ -6,7 +6,7 @@ import { Feed } from 'feed'
 import { meta } from '@/lib/meta'
 import { siteUrl } from '@/lib/utils'
 
-export async function GET(req: Request) {
+export const GET = async (req: Request) => {
   const feed = new Feed({
     title: meta.title,
     description: meta.description,

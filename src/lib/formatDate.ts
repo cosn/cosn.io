@@ -1,4 +1,4 @@
-export function formatDate(dateString: string, relative?: boolean): string {
+export const formatDate = (dateString: string, relative = false): string => {
   const date = new Date(`${dateString}`)
   const formattedDate = date.toLocaleDateString('en-US', {
     month: 'long',

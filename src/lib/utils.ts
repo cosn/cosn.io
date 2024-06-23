@@ -1,11 +1,11 @@
 import { clsx, type ClassValue } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
-export function cn(...inputs: ClassValue[]) {
+export const cn = (...inputs: ClassValue[]) => {
   return twMerge(clsx(inputs))
 }
 
-export function siteUrl(...paths: string[]) {
+export const siteUrl = (...paths: string[]) => {
   const site = process.env.NEXT_PUBLIC_SITE_URL
 
   if (!site) {

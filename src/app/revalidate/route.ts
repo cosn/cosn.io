@@ -2,7 +2,7 @@ import { revalidatePath, revalidateTag } from 'next/cache'
 import { type NextRequest } from 'next/server'
 import logger from '@/lib/logger'
 
-export async function POST(req: NextRequest) {
+export const POST = async (req: NextRequest) => {
   const targets: string[] = []
 
   const revalidate = (param: string, revalidateFn: (_item: string) => void) => {
