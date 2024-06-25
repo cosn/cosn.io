@@ -1,0 +1,122 @@
+import { PostLayout } from '@/components/PostLayout'
+
+export const post = {
+  published: false,
+  date: '2024-06-25',
+  title: 'Executive transitions',
+  description:
+    'When I joined Brex, I didn’t expect to stay for more than a couple of years. Best case, I thought I’d last 2-3 years before the company outgrew my abilities and brought in someone from a FAANG company who really knew what they were doing. Yet, nearly six years later, I handed the engineering reins to my dear friend James.',
+}
+
+export const metadata = {
+  title: post.title,
+  description: post.description,
+}
+
+export default (props) => <PostLayout post={post} {...props} />
+
+When I joined Brex, I didn’t expect to stay for more than a couple of years. Best case, I thought I’d last 2-3 years before the company outgrew my abilities and brought in someone from a FAANG company who really knew what they were doing. Yet, nearly six years later, I [handed the engineering reins to my dear friend James](https://www.linkedin.com/posts/jamesreggio_cant-say-this-was-a-post-i-ever-expected-activity-7173127926219960321-kyAQ?utm_source=share&utm_medium=member_desktop).
+
+Senior-level transitions aren’t often discussed. Having observed many of them firsthand, and now having gone through one myself, I want to share insights on the process and how I approached my own transition.
+
+We don't often hear about senior-level transitions. As someone who's seen many of them first-hand, had close friends go through them, and now having just gone through one, I'll try to cover all the details, and also as talk about how I've personally approached my own.
+
+## Definitions
+
+Throughout this post I will use the following terms interchangeably:
+
+- Employee/Executive/Individual: The person departing.
+- Manager/Founder/Company: The person's manager.
+
+## Different situations
+
+Every departure falls into one of three categories:
+
+- Fired: The company initiates the conversation; the executive has no choice (though they might agree with the decision).
+- Mutual Agreement: Either the employee or company can initiate, and they work together to find the best outcome.
+- Resignation: The employee initiates the conversation; the company has no choice.
+
+### Fired
+
+Most senior departures fall into this category. Good managers ensure it's not a surprise and handle it with dignity. Unless the person did something egregious, you won't know directly that they were fired. Sometimes there are signs, like short tenures [0], turmoil within their function, or significant cross-functional concerns. Usually, though, you'll just see a note from their manager saying, "X is moving on, we thank them for their contributions." Sometimes their replacement is already hired, but often this kicks off the search (another potential sign) [1].
+
+You might think many executives leave under mutual terms, and by the time the departure happens, it probably feels that way. But what matters is how it started. If feedback is delivered properly, the executive eventually realizes it’s time to move on. This is especially true for senior individuals who have likely been in the manager’s situation before.
+
+Despite the negative connotations, there are many reasons a senior individual might not be a good fit beyond poor performance [2]:
+
+- Stage mismatch: The executive was successful at companies operating at a different stage. This often happens when someone from a larger company joins a smaller one.
+- Scale mismatch: The executive was initially successful, but the role's scale outgrew their trajectory.
+- Culture mismatch: The individual doesn't adjust to the company's unique way of operating. At both Brex and Stripe, this was often a reason for executive departures.
+- Hiring mismatch: The executive fails to hire great people, hurting their ability to scale and eroding trust in their abilities. A common failure is hiring too many people from their past company [3], which I caution against, especially in the first year of a new executive’s tenure.
+
+### Mutual
+
+While ideal, this scenario is unfortunately not common. Many departures categorized as mutual are actually initiated by the company. Genuine mutual agreements occur when the founder and the executive have open and honest conversations about what’s best for them and the company, often after many years of working together.
+
+Common reasons for mutual departures include:
+
+- Burnout: The individual needs a break after years in a high-growth, high-intensity environment.
+- Bigger role: Moving from leading one major function to multiple (e.g., Engineering to EPD, CFO to COO, CxO to CEO).
+- Different role: Transitioning between operator and investor roles, or less commonly, moving between tech and non-tech or corporate and non-profit.
+- Different stage: Some executives prefer applying their playbook to companies at specific stages, while others want to experience the challenges faced at various stages. Early-stage executives might leave when the company grows beyond their preferred stage.
+- Retirement: After years of booming success in tech, some executives choose less demanding roles like advising, angel investing, or sitting on boards.
+
+The key here is open dialogue and collaborative planning. Signs of mutual departures include long-tenured executives, transparent communications, thoughtful transition planning, overlap between outgoing and incoming leaders, and often a continuing relationship between the executive and company [4].
+
+They key with all of these is that there's open dialog between the executive and the founder about it, and they're collaboratively working through it. The signs for departures happening in this category include longer-tenured executives, transparent and well-planned communications, thoughtful transition planning, overlap between the outgoing leader and the incoming one, and many times, some sort of continuing relationship between the executive and the company .
+
+### Quit
+
+More common at larger companies with many "executive" level employees. This category shares many reasons with mutual departures but includes a surprise element, requiring the company to scramble. Even when an opportunity is too good to pass up, I'd argue there should be better communication and planning.
+
+The most common reason is stagnation, where the leader feels the role or company is slowing their growth. This might lead to a VP-level leader taking a C-level role elsewhere, or making a lateral move to a company with a better brand or faster growth.
+
+In terms of signals, these transitions usually resemble the fired category more than the mutual one.
+
+## Blueprint
+
+While I led multiple functions, this section focuses on Engineering, as that’s most pertinent to CTOs. My transition took place over five months, with specific goals each month to support the new executive and the company while progressively removing myself. I also incorporated advice from other executives who have undergone similar transitions. In my case, we promoted a well-respected engineering leader, so I didn’t need to focus on onboarding a new hire, which is more typical in transitions.
+
+### Goals
+
+I approached the transition by considering both “what would I like to see happen” and “what are the failure modes to avoid.” My primary goal was simple:
+
+**_Do everything in my power to maximize the odds the new executive will be successful._**
+
+This means ensuring a smooth ramp-up into their new role and anticipating long-term risks. Here are some common failure modes:
+
+- Over-involvement: As a long-time leader, people default to asking for your opinion. I reserved giving my opinion only when asked by the new executive or the CEO and avoided sharing it with other senior engineering leaders unless previously aligned.
+- Presence distraction: Your presence can distract a meeting. People need to feel comfortable challenging past decisions, which is easier without you in the room.
+- Context awareness: You need to stay plugged in enough to provide context when needed. Observing nuances first-hand is crucial, especially in the beginning.
+- Avoiding crutches: Senior leaders might seek your endorsement for their proposals, but this can be a crutch. People need to learn to work together, including through disagreements and conflicts.
+- External stakeholders: External partners and board members might seek your insights about the new executive.
+
+While tempting to help, it’s better to provide context rather than advice since your time there is limited.
+
+I was explicit with both the new executive and the CEO that they should question and reverse any decisions I made. This was to ensure they felt empowered to lead in their way.
+
+### Plan
+
+I planned to reduce my involvement by one day per week each month. In February, I was involved full-time; and by June, I was down to one day per week. This schedule didn’t always follow exactly, but served as a good forcing function and a checksum that I'm actually delurking.
+
+In the first month, it felt like onboarding a new hire. I led many meetings and spent considerable time providing context and solving problems. This month included performance reviews, which required my involvement due to the backward-looking nature of discussions. I stopped attending the weekly executive team meeting and had my last quarterly Board of Directors (BoD) meeting to ensure I didn’t overshadow James.
+
+In March, the focus was on our release process and providing context in areas James wasn’t familiar with, such as infrastructure, vendor management, and compliance. I stopped attending the weekly engineering staff meeting as my contextual input was no longer necessary.
+
+April featured our week-long company-wide conference (One Brex), which provided an opportunity for final in-person 1-1s and feedback on the transition. This month involved navigating cross-functional tensions, reminding myself not to fall into old habits. At the end of the month, I left the executive Slack channel, shifting to an external approach moving forward.
+
+May focused on tying up bureaucratic loose ends, like updating compliance documentation and ensuring James had all the similar IT access I did. I also spent time in 1-1s saying goodbye and made my last trip to the SF office.
+
+In June, my involvement reduced to one day per week, mainly answering questions and celebrating team successes. It was gratifying to see the team achieve major accomplishments without my direct involvement.
+
+This plan could certainly be compressed, and I didn’t cover transitions for other functions I supported. My advice is to aim for at least three months of overlap and no more than six.
+
+Executive transitions are a critical juncture in any company's journey. They represent not just a change in leadership, but an opportunity for growth, fresh perspectives, and renewed energy. My experience has taught me that the key to a successful transition lies in open communication, thoughtful planning, and a genuine commitment to the success of both the incoming leader and the company as a whole.
+
+If you're facing a similar transition, I encourage you to approach the process with humility, transparency, and a focus on long-term success. Empower your successor, be open to change, and embrace the opportunity to support the next generation of leaders. Your legacy will be defined not just by what you achieved, but also how well you prepared others to continue being successful after your departure.
+
+[0]: While the average tenure for an individual contributor is now ~2 years, the more senior one is, the longer the expected tenure.
+[1]: A reason searches kickoff after the announcement is because it's a small industry, and secrets are hard to keep. You'd ideally want to have the person's direct reports involved in the interviewing their future manager. You'd want to control the narrative. And you'd want to make sure the candidates you're talking to don't feel their future employer is shady.
+[2]: When I made the decision to join Brex, I went in _expecting_ this outcome.
+[3]: Just like backchannels in the interview process, this can be a positive signal for a newly hired leader when other people are willing to follow them, and it reinforces the founder's decision to hire them.
+[4]: This alone is not sufficient signal, as many executives in the first bucket end up being advisors on paper.
