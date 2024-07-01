@@ -52,8 +52,8 @@ export const metadata: Metadata = {
 
 export default async function PostsIndex() {
   const res = await fetch(siteUrl('api/posts'), { next: { tags: ['posts'] } })
-  const data = await res.json()
-  const posts: PostWithSlug[] = data.posts
+  const data = (await res.json()) as { posts: PostWithSlug[] }
+  const posts = data.posts
 
   return (
     <SimpleLayout
