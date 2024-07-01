@@ -6,7 +6,7 @@
   "packageManager": "pnpm@9.4.0",
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "test": "vitest run",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
@@ -57,7 +57,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@cosn/tsc": "^1.11.0",
+    "@cosn/tsc": "^1.11.1",
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
