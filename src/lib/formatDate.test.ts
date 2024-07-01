@@ -46,7 +46,7 @@ describe('formatDate', () => {
   it('should return "This month" for dates within the current month but more than two weeks ago', () => {
     const date = new Date(now - 20 * 24 * 60 * 60 * 1000).toISOString()
     const formattedDate = formatDate(date, true)
-    expect(formattedDate).toBe('This month')
+    expect(formattedDate).toBe('Past month')
   })
 
   it('should return "Last month" for dates within the last month but not this month', () => {

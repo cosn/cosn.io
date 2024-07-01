@@ -20,7 +20,7 @@ export const formatDate = (dateString: string, relative = false): string => {
   } else if (days < 15) {
     return `${Math.floor(days / 7)} weeks ago`
   } else if (days < 31) {
-    return `This month`
+    return `Past month`
   } else if (days < 45) {
     return `Last month`
   } else {
