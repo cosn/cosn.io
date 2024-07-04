@@ -24,6 +24,7 @@ import logoFallback from '@/images/logos/portfolio.svg'
 import logoRepool from '@/images/logos/repool.svg'
 import logoRunloop from '@/images/logos/runloop.svg'
 import logoSavvy from '@/images/logos/savvy.svg'
+import logoSpark from '@/images/logos/spark.png'
 import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
 import logoXflow from '@/images/logos/xflow.svg'
@@ -170,6 +171,12 @@ const investments = [
       'Accelerate financial innovation by empowering cutting-edge banks and fintechs to efficiently onboard more customers faster with stronger compliance.',
     link: 'https://parcha.com',
     logo: logoParcha,
+  },
+  {
+    name: 'Spark',
+    description: 'AI workflows for utility and community solar projects.',
+    link: 'https://sparkhq.ai',
+    logo: logoSpark,
   },
 ]
 
