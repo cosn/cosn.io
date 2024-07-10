@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/cron/raindrop-rss",
+      "schedule": "0 23 * * *"
+    }
+  ]
+}
