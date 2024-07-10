@@ -1,7 +1,3 @@
-if (!process.env.RAINDROP_TOKEN) {
-  throw new Error('Missing RAINDROP_TOKEN')
-}
-
 const url = 'https://api.raindrop.io/rest/v1'
 
 type RaindropConfig = {
