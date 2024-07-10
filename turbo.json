@@ -1,15 +1,14 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["RAINDROP_TOKEN", "UPSTASH_REDIS_REST_TOKEN"],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "env": ["RAINDROP_TOKEN"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {
       "persistent": true,
-      "env": ["RAINDROP_TOKEN"],
       "cache": false
     },
     "clean": {
