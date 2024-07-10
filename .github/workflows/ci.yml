@@ -13,6 +13,8 @@ jobs:
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+      RAINDROP_TOKEN: ci
+      UPSTASH_REDIS_REST_TOKEN: ci
     steps:
       - uses: actions/checkout@v4
       - uses: actions/cache@v4
