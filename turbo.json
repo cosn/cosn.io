@@ -4,12 +4,12 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env.local", ".env"],
+      "env": ["RAINDROP_TOKEN"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
     "dev": {
       "persistent": true,
-      "inputs": ["$TURBO_DEFAULT$", ".env.local"],
+      "env": ["RAINDROP_TOKEN"],
       "cache": false
     },
     "clean": {
