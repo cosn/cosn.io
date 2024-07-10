@@ -8,7 +8,7 @@ const apiTokenRoute = createRouteMatcher(['/revalidate(.*)'])
 const handleApiTokenRoute = (req: NextRequest) => {
   const token = req.headers.get('X-API-TOKEN')
 
-  if (!token || token !== process.env.API_TOKEN) {
+  if (token !== process.env.API_TOKEN) {
     logger.warn('Unauthorized', { ip: req.ip, geo: req.geo, token: token })
     return new Response('Unauthorized', { status: 401 })
   }
@@ -20,7 +20,7 @@ const cronTokenRoute = createRouteMatcher(['/cron(.*)'])
 const handleCronTokenRoute = (req: NextRequest) => {
   const token = req.headers.get('authorization')
 
-  if (!token || token !== process.env.CRON_SECRET) {
+  if (token !== `Bearer ${process.env.CRON_SECRET}`) {
     logger.warn('Unauthorized', { ip: req.ip, geo: req.geo, token: token })
     return new Response('Unauthorized', { status: 401 })
   }
