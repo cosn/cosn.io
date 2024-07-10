@@ -34,7 +34,7 @@ class Raindrop {
     return (await res.json()) as T
   }
 
-  public async collection(name: string) {
+  public async getCollectionId(name: string) {
     type CollectionItem = {
       _id: string
       title: string
@@ -45,14 +45,29 @@ class Raindrop {
     }
 
     const res: CollectionsResponse = await this.request('/collections')
-    const result = res.items.find((c: CollectionItem) => c.title === name)
+    const col = res.items.find((c: CollectionItem) => c.title === name)
 
-    return result?._id ?? null
+    if (!col) {
+      throw new Error(`Collection ${name} not found`)
+    }
+
+    return col._id
+  }
+
+  public async create(link: string, collection: string, title?: string) {
+    return await this.request('/raindrop', {
+      method: 'POST',
+      body: JSON.stringify({
+        link: link,
+        title: title,
+        collectionId: collection,
+      }),
+    })
   }
 }
 
 const raindrop = new Raindrop({
-  token: process.env.RAINDROP_TOKEN,
+  token: process.env.RAINDROP_TOKEN!,
 })
 
 export default raindrop
