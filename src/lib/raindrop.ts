@@ -67,7 +67,7 @@ class Raindrop {
 }
 
 const raindrop = new Raindrop({
-  token: process.env.RAINDROP_TOKEN!,
+  token: process.env.RAINDROP_TOKEN,
 })
 
 export default raindrop
