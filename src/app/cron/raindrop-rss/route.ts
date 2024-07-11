@@ -19,7 +19,7 @@ const parser: Parser<ParserCustomFeed, ParserCustomItem> = new Parser({
   },
 })
 
-type Metadata = {
+type Context = {
   collectionId: string
   lastRunDate: number
 }
@@ -28,31 +28,35 @@ const redisKey = 'cron-raindrop-rss'
 
 const init = async () => {
   // if this fails, let it bubble up, so we don't automatically re-run the job
-  let metadata = (await redis.hgetall(redisKey)) as Metadata
+  let ctx = (await redis.hgetall(redisKey)) as Context
 
-  if (!metadata) {
+  if (!ctx) {
     const cid = await raindrop.getCollectionId('Reader')
     const lastRunDate = new Date().getTime()
 
-    metadata = {
+    ctx = {
       collectionId: cid,
       lastRunDate: lastRunDate,
     }
 
-    redis.hset(redisKey, metadata)
+    redis.hset(redisKey, ctx)
   }
 
-  return metadata
+  return ctx
 }
 
-const commit = async (metadata: Metadata) => {
-  type CommitMetadata = Pick<Metadata, 'lastRunDate'>
+const commit = async (context: Context) => {
+  type CommitMetadata = Pick<Context, 'lastRunDate'>
   const commitMetadata: CommitMetadata = {
-    ...metadata,
+    ...context,
   }
   commitMetadata.lastRunDate = new Date().getTime()
 
-  await redis.hset(redisKey, commitMetadata)
+  try {
+    await redis.hset(redisKey, commitMetadata)
+  } catch (error) {
+    logger.error('Failed to commit cron context', { error: error })
+  }
 }
 
 export const GET = async () => {
@@ -86,11 +90,8 @@ export const GET = async () => {
     }
   }
 
-  try {
-    await commit(metadata)
-  } catch (error) {
-    logger.error('Failed to commit cron metadata', { error: error })
-  }
+  await commit(metadata)
 
+  logger.info('Raindrop RSS cron executed successfully', { entries: entries })
   return Response.json({ entries: entries })
 }
