@@ -29,9 +29,12 @@ describe('PostLayout', () => {
     cleanup()
     vi.resetAllMocks()
 
+    // @ts-ignore
     useSearchParams.mockReturnValue({
       get: vi.fn().mockReturnValue(false),
     })
+
+    // @ts-ignore
     incrementViews.mockResolvedValue(10)
   })
 
@@ -47,6 +50,7 @@ describe('PostLayout', () => {
   })
 
   it('does not render the back button when previousPathname is not provided', () => {
+    // @ts-ignore
     usePathname.mockReturnValue('/blog/test-post')
 
     render(
@@ -61,6 +65,7 @@ describe('PostLayout', () => {
   })
 
   it('renders the back button when previousPathname is provided', () => {
+    // @ts-ignore
     usePathname.mockReturnValue('/blog/test-post')
 
     render(
@@ -76,7 +81,9 @@ describe('PostLayout', () => {
 
   it('navigates back when the back button is clicked', () => {
     const routerMock = { back: vi.fn() }
+    // @ts-ignore
     useRouter.mockReturnValue(routerMock)
+    // @ts-ignore
     usePathname.mockReturnValue('/blog/test-post')
 
     render(
@@ -102,7 +109,7 @@ describe('PostLayout', () => {
   })
 
   it('increments views when the component mounts', () => {
-    process.env.NODE_ENV = 'production'
+    vi.stubEnv('NODE_ENV', 'production')
 
     render(
       <PostLayout post={post}>
@@ -114,7 +121,7 @@ describe('PostLayout', () => {
   })
 
   it('does not increment views in development environment', () => {
-    process.env.NODE_ENV = 'development'
+    vi.stubEnv('NODE_ENV', 'development')
 
     render(
       <PostLayout post={post}>
@@ -126,7 +133,8 @@ describe('PostLayout', () => {
   })
 
   it('renders the view count when showviews query param is true', async () => {
-    process.env.NODE_ENV = 'production'
+    vi.stubEnv('NODE_ENV', 'production')
+    // @ts-ignore
     useSearchParams.mockReturnValue({
       get: vi.fn().mockReturnValue('true'),
     })
@@ -141,7 +149,8 @@ describe('PostLayout', () => {
   })
 
   it('does not render the view count when showviews query param is false or not present', () => {
-    process.env.NODE_ENV = 'production'
+    vi.stubEnv('NODE_ENV', 'production')
+    // @ts-ignore
     useSearchParams.mockReturnValue({
       get: vi.fn().mockReturnValue('false'),
     })
