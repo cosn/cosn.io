@@ -1,2 +1,2 @@
-turbo test
+pnpm test
 pnpx lint-staged
