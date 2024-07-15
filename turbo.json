@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
   "globalDependencies": ["**/.env.*local", "tsconfig.json"],
   "globalEnv": ["RAINDROP_TOKEN", "UPSTASH_REDIS_REST_TOKEN"],
   "tasks": {
@@ -11,17 +12,21 @@
       "dependsOn": ["transit"]
     },
     "dev": {
-      "persistent": true,
-      "cache": false
+      "cache": false,
+      "persistent": true
     },
     "lint": {},
     "format": {},
     "start": {
+      "cache": false,
       "dependsOn": ["build"],
-      "cache": false
+      "persistent": true
     },
     "test": {},
-    "test:unit": {},
+    "test:unit": {
+      "cache": false,
+      "interactive": true
+    },
     "test:e2e": {
       "outputs": ["test-results/**"]
     },
