@@ -40,7 +40,6 @@
     "@clerk/themes": "^2.1.10",
     "@headlessui/react": "^1.7.19",
     "@upstash/redis": "^1.32.0",
-    "@vercel/speed-insights": "^1.0.12",
     "cheerio": "1.0.0-rc.12",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

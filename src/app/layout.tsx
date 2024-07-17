@@ -1,4 +1,3 @@
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import { type Metadata } from 'next'
 import { Inter, Roboto_Mono } from 'next/font/google'
 import Script from 'next/script'
@@ -71,7 +70,6 @@ export default function RootLayout({
           </div>
         </Providers>
         <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
-        <SpeedInsights />
       </body>
     </html>
   )
