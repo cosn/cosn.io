@@ -29,12 +29,12 @@ describe('PostLayout', () => {
     cleanup()
     vi.resetAllMocks()
 
-    // @ts-ignore
+    // @ts-expect-error
     useSearchParams.mockReturnValue({
       get: vi.fn().mockReturnValue(false),
     })
 
-    // @ts-ignore
+    // @ts-expect-error
     incrementViews.mockResolvedValue(10)
   })
 
@@ -50,7 +50,7 @@ describe('PostLayout', () => {
   })
 
   it('does not render the back button when previousPathname is not provided', () => {
-    // @ts-ignore
+    // @ts-expect-error
     usePathname.mockReturnValue('/blog/test-post')
 
     render(
@@ -65,7 +65,7 @@ describe('PostLayout', () => {
   })
 
   it('renders the back button when previousPathname is provided', () => {
-    // @ts-ignore
+    // @ts-expect-error
     usePathname.mockReturnValue('/blog/test-post')
 
     render(
@@ -81,9 +81,9 @@ describe('PostLayout', () => {
 
   it('navigates back when the back button is clicked', () => {
     const routerMock = { back: vi.fn() }
-    // @ts-ignore
+    // @ts-expect-error
     useRouter.mockReturnValue(routerMock)
-    // @ts-ignore
+    // @ts-expect-error
     usePathname.mockReturnValue('/blog/test-post')
 
     render(
@@ -134,7 +134,7 @@ describe('PostLayout', () => {
 
   it('renders the view count when showviews query param is true', async () => {
     vi.stubEnv('NODE_ENV', 'production')
-    // @ts-ignore
+    // @ts-expect-error
     useSearchParams.mockReturnValue({
       get: vi.fn().mockReturnValue('true'),
     })
@@ -150,7 +150,7 @@ describe('PostLayout', () => {
 
   it('does not render the view count when showviews query param is false or not present', () => {
     vi.stubEnv('NODE_ENV', 'production')
-    // @ts-ignore
+    // @ts-expect-error
     useSearchParams.mockReturnValue({
       get: vi.fn().mockReturnValue('false'),
     })

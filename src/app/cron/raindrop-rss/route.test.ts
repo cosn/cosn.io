@@ -43,7 +43,7 @@ describe('RSS Parser and Raindrop Integration', () => {
       },
     ]
 
-    // @ts-ignore
+    // @ts-expect-error
     Parser.prototype.parseURL.mockImplementation(() => {
       return Promise.resolve(mockFeedQueue.shift() || { items: [] })
     })
