@@ -4,23 +4,15 @@ if (!process.env.RAINDROP_TOKEN) {
 
 const url = 'https://api.raindrop.io/rest/v1'
 
-type RaindropConfig = {
-  token: string
-}
-
 class Raindrop {
-  private config: RaindropConfig
-
-  constructor(config: RaindropConfig) {
-    this.config = config
-  }
+  constructor(private _config: { token: string }) {}
 
   private async request<T>(endpoint: string, opts?: RequestInit) {
     const res = await fetch(`${url}/${endpoint}`, {
       ...opts,
       headers: {
         ...opts?.headers,
-        Authorization: `Bearer ${this.config.token}`,
+        Authorization: `Bearer ${this._config.token}`,
         'Content-Type': 'application/json',
       },
     })
