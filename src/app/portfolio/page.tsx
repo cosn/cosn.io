@@ -29,6 +29,7 @@ import logoSpark from '@/images/logos/spark.png'
 import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
 import logoXflow from '@/images/logos/xflow.svg'
+import logoEarthly from '@/images/logos/earthly.svg'
 
 const investments = [
   {
@@ -184,6 +185,12 @@ const investments = [
     description: 'Take back control of your supply chain.',
     link: 'https://mobytrade.com',
     logo: logoMobyTrade,
+  },
+  {
+    name: 'Earthly',
+    description: 'Simple, Fast, Consistent Builds.',
+    link: 'https://earthly.dev',
+    logo: logoEarthly,
   },
 ]
 
