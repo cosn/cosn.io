@@ -16,6 +16,7 @@ import logoDuna from '@/images/logos/duna.svg'
 import logoFragment from '@/images/logos/fragment.png'
 import logoLassie from '@/images/logos/lassie.jpg'
 import logoLogicLoop from '@/images/logos/logicloop.svg'
+import logoMobyTrade from '@/images/logos/mobytrade.png'
 import logoModernLoop from '@/images/logos/modernloop.svg'
 import logoOpine from '@/images/logos/opine.svg'
 import logoOptech from '@/images/logos/optech.svg'
@@ -177,6 +178,12 @@ const investments = [
     description: 'AI workflows for utility and community solar projects.',
     link: 'https://sparkhq.ai',
     logo: logoSpark,
+  },
+  {
+    name: 'MobyTrade',
+    description: 'Take back control of your supply chain.',
+    link: 'https://mobytrade.com',
+    logo: logoMobyTrade,
   },
 ]
 
