@@ -13,6 +13,7 @@ import logoCoverbase from '@/images/logos/coverbase.svg'
 import logoDidero from '@/images/logos/didero.png'
 import logoDosu from '@/images/logos/dosu.svg'
 import logoDuna from '@/images/logos/duna.svg'
+import logoEarthly from '@/images/logos/earthly.svg'
 import logoFragment from '@/images/logos/fragment.png'
 import logoLassie from '@/images/logos/lassie.jpg'
 import logoLogicLoop from '@/images/logos/logicloop.svg'
@@ -29,7 +30,6 @@ import logoSpark from '@/images/logos/spark.png'
 import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
 import logoXflow from '@/images/logos/xflow.svg'
-import logoEarthly from '@/images/logos/earthly.svg'
 
 const investments = [
   {
