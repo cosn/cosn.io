@@ -13,7 +13,7 @@ cat > ${dir}/page.mdx << EOF
 import { PostLayout } from '@/components/PostLayout'
 
 export const post = {
-  published: false,
+  published: true,
   date: '${date}',
   title: '${title}',
   description:
