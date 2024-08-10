@@ -15,8 +15,12 @@
       "cache": false,
       "persistent": true
     },
-    "lint": {},
-    "format": {},
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "format": {
+      "dependsOn": ["^format"]
+    },
     "start": {
       "cache": false,
       "dependsOn": ["build"],
