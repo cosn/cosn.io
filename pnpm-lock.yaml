@@ -70,8 +70,8 @@ importers:
         specifier: ^19.2.2
         version: 19.2.2
       '@cosn/tsc':
-        specifier: ^1.15.1
-        version: 1.15.1(@types/eslint@9.6.0)(@typescript-eslint/parser@8.0.0-alpha.62(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.4)(vitest@1.6.0(@types/node@20.14.15)(jsdom@24.1.1)(terser@5.31.5))
+        specifier: ^1.15.2
+        version: 1.15.2(@types/eslint@9.6.0)(@typescript-eslint/parser@8.0.0-alpha.62(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.4)(vitest@1.6.0(@types/node@20.14.15)(jsdom@24.1.1)(terser@5.31.5))
       '@mapbox/rehype-prism':
         specifier: ^0.9.0
         version: 0.9.0
@@ -376,8 +376,8 @@ packages:
     resolution: {integrity: sha512-tpyc+7i6bPG9mvaBbtKUeghfyZSDgWquIDfMgqYtTbmZ9Y9VzEm2je9EYcQ0aoz5o7NvGS+rcDec93yO08MHYA==}
     engines: {node: '>=v18'}
 
-  '@cosn/tsc@1.15.1':
-    resolution: {integrity: sha512-XUsYranHgpkbWLUGVq4hcDDSr3zzFVwXa8TuCG2geN2fS/4l5WfTxUkuh9HHyi11i6scySqlW+NnfE0b7Fgs0A==}
+  '@cosn/tsc@1.15.2':
+    resolution: {integrity: sha512-kS1c5daq6sBavnmhwqCafnsu4eGFzZlX0jskAkEVU38l34YQg2JvUBkVCXzAC5ZmKNYME8JXz1hC0wBPI/yXmA==}
 
   '@dabh/diagnostics@2.0.3':
     resolution: {integrity: sha512-hrlQOIi7hAfzsMqlGSFyVucrx38O+j6wiGOf//H2ecvIEqYN4ADBSS2iLMh5UFyDunCNniUIPk/q3riFv45xRA==}
@@ -4642,7 +4642,7 @@ snapshots:
       '@types/conventional-commits-parser': 5.0.0
       chalk: 5.3.0
 
-  '@cosn/tsc@1.15.1(@types/eslint@9.6.0)(@typescript-eslint/parser@8.0.0-alpha.62(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.4)(vitest@1.6.0(@types/node@20.14.15)(jsdom@24.1.1)(terser@5.31.5))':
+  '@cosn/tsc@1.15.2(@types/eslint@9.6.0)(@typescript-eslint/parser@8.0.0-alpha.62(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(prettier@3.3.3)(typescript@5.5.4)(vitest@1.6.0(@types/node@20.14.15)(jsdom@24.1.1)(terser@5.31.5))':
     dependencies:
       '@eslint/compat': 1.1.1
       '@eslint/js': 9.9.0
