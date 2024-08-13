@@ -132,7 +132,7 @@ const investments = [
     name: 'LogicLoop',
     description:
       'Make your operations data work harder than operations people.',
-    link: 'https://logicloop.com',
+    link: 'https://logicloop.inc',
     logo: logoLogicLoop,
   },
   {
