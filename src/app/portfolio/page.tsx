@@ -1,5 +1,5 @@
 import { type Metadata } from 'next'
-import Image from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
@@ -31,7 +31,14 @@ import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
 import logoXflow from '@/images/logos/xflow.svg'
 
-const investments = [
+type Investment = {
+  name: string
+  description: string
+  link: `https://${string}`
+  logo: StaticImageData
+}
+
+const investments: Investment[] = [
   {
     name: 'Arc',
     description: 'Empowering startups with modern financial products.',
@@ -132,7 +139,7 @@ const investments = [
     name: 'LogicLoop',
     description:
       'Make your operations data work harder than operations people.',
-    link: 'https://logicloop.inc',
+    link: 'https://logicloop.com',
     logo: logoLogicLoop,
   },
   {
