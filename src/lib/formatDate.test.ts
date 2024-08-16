@@ -38,9 +38,9 @@ describe('formatDate', () => {
   })
 
   it('should return "X weeks ago" for dates within the last two weeks', () => {
-    const date = new Date(now - 10 * 24 * 60 * 60 * 1000).toISOString()
+    const date = new Date(now - 11 * 24 * 60 * 60 * 1000).toISOString()
     const formattedDate = formatDate(date, true)
-    expect(formattedDate).toBe('1 weeks ago')
+    expect(formattedDate).toBe('2 weeks ago')
   })
 
   it('should return "This month" for dates within the current month but more than two weeks ago', () => {

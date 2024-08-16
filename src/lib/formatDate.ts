@@ -18,7 +18,7 @@ export const formatDate = (dateString: string, relative = false): string => {
   } else if (days < 7) {
     return `${days} days ago`
   } else if (days < 15) {
-    return `${Math.floor(days / 7)} weeks ago`
+    return `${Math.round(days / 7)} weeks ago`
   } else if (days < 31) {
     return `Past month`
   } else if (days < 45) {
