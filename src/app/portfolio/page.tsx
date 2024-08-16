@@ -16,10 +16,10 @@ import logoDuna from '@/images/logos/duna.svg'
 import logoEarthly from '@/images/logos/earthly.svg'
 import logoFragment from '@/images/logos/fragment.png'
 import logoLassie from '@/images/logos/lassie.jpg'
+import logoLorikeet from '@/images/logos/lorikeet.svg'
 import logoMobyTrade from '@/images/logos/mobytrade.png'
 import logoModernLoop from '@/images/logos/modernloop.svg'
 import logoOpine from '@/images/logos/opine.svg'
-import logoOptech from '@/images/logos/optech.svg'
 import logoParcha from '@/images/logos/parcha.svg'
 import logoFallback from '@/images/logos/portfolio.svg'
 import logoRepool from '@/images/logos/repool.svg'
@@ -122,11 +122,10 @@ const investments: Investment[] = [
     logo: logoDosu,
   },
   {
-    name: 'Optech',
-    description:
-      'Infinitely scale your customer support, and save money doing it.',
-    link: 'https://optech.ai',
-    logo: logoOptech,
+    name: 'Lorikeet',
+    description: 'AI customer support so powerful it feels human.',
+    link: 'https://www.lorikeetcx.ai',
+    logo: logoLorikeet,
   },
   {
     name: 'ModernLoop',
