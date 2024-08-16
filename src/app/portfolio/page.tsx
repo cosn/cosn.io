@@ -16,7 +16,6 @@ import logoDuna from '@/images/logos/duna.svg'
 import logoEarthly from '@/images/logos/earthly.svg'
 import logoFragment from '@/images/logos/fragment.png'
 import logoLassie from '@/images/logos/lassie.jpg'
-import logoLogicLoop from '@/images/logos/logicloop.svg'
 import logoMobyTrade from '@/images/logos/mobytrade.png'
 import logoModernLoop from '@/images/logos/modernloop.svg'
 import logoOpine from '@/images/logos/opine.svg'
@@ -134,13 +133,6 @@ const investments: Investment[] = [
     description: 'Efficiently transform your candidate experience.',
     link: 'https://modernloop.com',
     logo: logoModernLoop,
-  },
-  {
-    name: 'LogicLoop',
-    description:
-      'Make your operations data work harder than operations people.',
-    link: 'https://logicloop.com',
-    logo: logoLogicLoop,
   },
   {
     name: 'Xflow',
