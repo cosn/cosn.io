@@ -19,6 +19,7 @@ import logoLassie from '@/images/logos/lassie.jpg'
 import logoLorikeet from '@/images/logos/lorikeet.svg'
 import logoMobyTrade from '@/images/logos/mobytrade.png'
 import logoModernLoop from '@/images/logos/modernloop.svg'
+import logoNerve from '@/images/logos/nerve.png'
 import logoOpine from '@/images/logos/opine.svg'
 import logoParcha from '@/images/logos/parcha.svg'
 import logoFallback from '@/images/logos/portfolio.svg'
@@ -189,6 +190,12 @@ const investments: Investment[] = [
     description: 'Simple, Fast, Consistent Builds.',
     link: 'https://earthly.dev',
     logo: logoEarthly,
+  },
+  {
+    name: 'Nerve',
+    description: 'The AI home page for your work.',
+    link: 'https://www.usenerve.com',
+    logo: logoNerve,
   },
 ]
 
