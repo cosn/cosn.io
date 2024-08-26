@@ -149,8 +149,7 @@ const investments: Investment[] = [
   },
   {
     name: 'Bridge',
-    description:
-      'APIs that enable developers to move into, out of, and between any form of a dollar.',
+    description: 'Stablecoin API for developers.',
     link: 'https://bridge.xyz',
     logo: logoBridge,
   },
