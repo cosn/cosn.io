@@ -36,8 +36,8 @@
     "url": "https://cosn.io"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.3.6",
-    "@clerk/themes": "^2.1.24",
+    "@clerk/nextjs": "^5.3.7",
+    "@clerk/themes": "^2.1.25",
     "@headlessui/react": "^1.7.19",
     "@upstash/redis": "^1.34.0",
     "cheerio": "1.0.0-rc.12",
