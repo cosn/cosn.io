@@ -198,7 +198,7 @@ const investments: Investment[] = [
     logo: logoNerve,
   },
   {
-    name: 'Chai',
+    name: 'Chai Discovery',
     description: 'Transform biology from science into engineering.',
     link: 'https://www.chaidiscovery.com',
     logo: logoChai,
