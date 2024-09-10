@@ -1,0 +1,65 @@
+{
+  "name": "cosn.io",
+  "sideEffects": false,
+  "type": "module",
+  "prettier": "@cosn/tsc/prettier",
+  "packageManager": "pnpm@9.4.0",
+  "scripts": {
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "lint": "eslint .",
+    "start": "remix-serve ./build/server/index.js",
+    "typecheck": "tsc",
+    "format": "prettier --write .",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "cos",
+    "blog",
+    "impatient optimism"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cosn/cosn.github.io.git"
+  },
+  "author": {
+    "name": "Cosmin Nicolaescu",
+    "email": "cos@cosn.io",
+    "url": "https://cosn.io"
+  },
+  "dependencies": {
+    "@remix-run/node": "^2.12.0",
+    "@remix-run/react": "^2.12.0",
+    "@remix-run/serve": "^2.12.0",
+    "isbot": "^4.4.0",
+    "pino": "^9.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.2",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "@cosn/tsc": "^1.15.3",
+    "@playwright/test": "^1.47.0",
+    "@remix-run/dev": "^2.12.0",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^20.16.5",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "@types/webpack-env": "^1.18.5",
+    "autoprefixer": "^10.4.20",
+    "husky": "^9.1.5",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.10",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.3",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

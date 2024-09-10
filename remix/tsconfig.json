@@ -1,0 +1,18 @@
+{
+  "extends": "@cosn/tsc/tsconfig-web",
+  "compilerOptions": {
+    "types": ["@remix-run/node", "vite/client"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "**/.server/**/*.ts",
+    "**/.server/**/*.tsx",
+    "**/.client/**/*.ts",
+    "**/.client/**/*.tsx"
+  ]
+}
