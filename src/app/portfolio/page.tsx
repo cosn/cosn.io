@@ -9,6 +9,7 @@ import logoAtoB from '@/images/logos/atob.svg'
 import logoBend from '@/images/logos/bend.svg'
 import logoBridge from '@/images/logos/bridge.svg'
 import logoBuk from '@/images/logos/buk.svg'
+import logoChai from '@/images/logos/chai.png'
 import logoCoverbase from '@/images/logos/coverbase.svg'
 import logoDidero from '@/images/logos/didero.png'
 import logoDosu from '@/images/logos/dosu.svg'
@@ -195,6 +196,12 @@ const investments: Investment[] = [
     description: 'The AI home page for your work.',
     link: 'https://www.usenerve.com',
     logo: logoNerve,
+  },
+  {
+    name: 'Chai',
+    description: 'Transform biology from science into engineering.',
+    link: 'https://www.chaidiscovery.com',
+    logo: logoChai,
   },
 ]
 
