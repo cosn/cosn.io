@@ -31,10 +31,10 @@ function SocialLink({
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className='group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500'
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
-        <span className="ml-4">{children}</span>
+        <Icon className='h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500' />
+        <span className='ml-4'>{children}</span>
       </Link>
     </li>
   )
@@ -52,43 +52,43 @@ export default async function About() {
   const redirectUrl = siteUrl('about')
 
   return (
-    <Container className="mt-16 sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div className="lg:pl-20">
-          <div className="max-w-xs px-2.5 lg:max-w-none">
+    <Container className='mt-16 sm:mt-32'>
+      <div className='grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12'>
+        <div className='lg:pl-20'>
+          <div className='max-w-xs px-2.5 lg:max-w-none'>
             <Link href={`/sign-in?redirect_url=${redirectUrl}`}>
               <Image
                 src={portraitImage}
-                alt="Headshot"
-                sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                alt='Headshot'
+                sizes='(min-width: 1024px) 32rem, 20rem'
+                className='aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800'
               />
             </Link>
           </div>
         </div>
-        <div className="lg:order-first lg:row-span-2">
-          <h1 className="font-mono text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100">
+        <div className='lg:order-first lg:row-span-2'>
+          <h1 className='font-mono text-4xl font-bold tracking-tight text-zinc-800 sm:text-2xl dark:text-zinc-100'>
             <SignedIn>Hi {user?.firstName}, I'm Cos</SignedIn>
             <SignedOut>Hello, I'm Cos</SignedOut>
           </h1>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
             <p>I'm an engineer, operator, and entrepreneur.</p>
             <p>
               Most recently I was the CTO of{' '}
-              <span className="font-bold">Brex</span>, where I scaled the
+              <span className='font-bold'>Brex</span>, where I scaled the
               company from 40 to over 1,000 employees and hundreds of millions
               in annual revenue. I've also worked at{' '}
-              <span className="font-bold">Stripe</span> as an early engineer and
+              <span className='font-bold'>Stripe</span> as an early engineer and
               manager, building core global payments infrastructure, and
               launching the Stripe Terminal product. I started my career at{' '}
-              <span className="font-bold">Microsoft</span>, working on the early
+              <span className='font-bold'>Microsoft</span>, working on the early
               versions of Azure and Office365.
             </p>
             <p>
               Moving places has helped me embrace changes of varying magnitudes.
               I've so far lived in the following cities:
             </p>
-            <ul className="ml-8 list-disc">
+            <ul className='ml-8 list-disc'>
               <li>Born in Bucharest, Romania</li>
               <li>Exchange student in Deatsville, AL</li>
               <li>University in Philadelphia, PA</li>
@@ -98,12 +98,12 @@ export default async function About() {
               <li>Los Angeles, CA</li>
             </ul>
           </div>
-          <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+          <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
             <p>Some opinions and beliefs I've formed over time:</p>
-            <ul className="ml-8 list-disc">
+            <ul className='ml-8 list-disc'>
               <li>
-                <span className="italic">Everything compounds</span>
-                <ul className="ml-4 list-disc">
+                <span className='italic'>Everything compounds</span>
+                <ul className='ml-4 list-disc'>
                   <li>
                     Investing in something, and then letting it grow, leads to
                     surprising moats
@@ -111,9 +111,9 @@ export default async function About() {
                   <li>
                     Conversely, a series of poor decisions or constant{' '}
                     <a
-                      href="https://en.wikipedia.org/wiki/Tacking_(sailing)"
-                      target="_blank"
-                      className="underline"
+                      href='https://en.wikipedia.org/wiki/Tacking_(sailing)'
+                      target='_blank'
+                      className='underline'
                     >
                       tacking
                     </a>{' '}
@@ -121,11 +121,11 @@ export default async function About() {
                   </li>
                 </ul>
               </li>
-              <li className="mt-2">
-                <span className="italic">
+              <li className='mt-2'>
+                <span className='italic'>
                   Time is our most precious resource
                 </span>
-                <ul className="ml-4 list-disc">
+                <ul className='ml-4 list-disc'>
                   <li>At least for now, you can't buy more, nor manipulate</li>
                   <li>
                     Memories are more valuable than vast majority of material
@@ -133,9 +133,9 @@ export default async function About() {
                   </li>
                 </ul>
               </li>
-              <li className="mt-2">
-                <span className="italic">Speed matters</span>
-                <ul className="ml-4 list-disc">
+              <li className='mt-2'>
+                <span className='italic'>Speed matters</span>
+                <ul className='ml-4 list-disc'>
                   <li>
                     In a multi-step problem, reduce the long-pole, recursively
                   </li>
@@ -146,9 +146,9 @@ export default async function About() {
                   <li>How fast you act and respond is a signal to others</li>
                 </ul>
               </li>
-              <li className="mt-2">
-                <span className="italic">Smaller teams are better</span>
-                <ul className="ml-4 list-disc">
+              <li className='mt-2'>
+                <span className='italic'>Smaller teams are better</span>
+                <ul className='ml-4 list-disc'>
                   <li>
                     There's less overhead, leads to faster decisions, and is
                     more fun for everyone involved
@@ -163,11 +163,11 @@ export default async function About() {
                   </li>
                 </ul>
               </li>
-              <li className="mt-2">
-                <span className="italic">
+              <li className='mt-2'>
+                <span className='italic'>
                   Extreme positions often lead to suboptimal outcomes
                 </span>
-                <ul className="ml-4 list-disc">
+                <ul className='ml-4 list-disc'>
                   <li>
                     Most often you're simply balancing multiple variables, which
                     leads to various tradeoffs
@@ -183,9 +183,9 @@ export default async function About() {
                   </li>
                 </ul>
               </li>
-              <li className="mt-2">
-                <span className="italic">EQ tends to be underrated</span>
-                <ul className="ml-4 list-disc">
+              <li className='mt-2'>
+                <span className='italic'>EQ tends to be underrated</span>
+                <ul className='ml-4 list-disc'>
                   <li>
                     Individuals have unique reactions, so no matter how great
                     one is at pattern-matching, outcomes are highly dependent on
@@ -204,29 +204,29 @@ export default async function About() {
             </ul>
           </div>
         </div>
-        <div className="lg:pl-20">
-          <ul role="list">
-            <SocialLink href="https://twitter.com/getCos" icon={XIcon}>
+        <div className='lg:pl-20'>
+          <ul role='list'>
+            <SocialLink href='https://twitter.com/getCos' icon={XIcon}>
               Follow on X
             </SocialLink>
             <SocialLink
-              href="https://github.com/cosn"
+              href='https://github.com/cosn'
               icon={GitHubIcon}
-              className="mt-4"
+              className='mt-4'
             >
               Follow on GitHub
             </SocialLink>
             <SocialLink
-              href="https://linkedin.com/in/cosminn"
+              href='https://linkedin.com/in/cosminn'
               icon={LinkedInIcon}
-              className="mt-4"
+              className='mt-4'
             >
               Follow on LinkedIn
             </SocialLink>
             <SocialLink
-              href="mailto:blog@cosn.io"
+              href='mailto:blog@cosn.io'
               icon={MailIcon}
-              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+              className='mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40'
             >
               Send email
             </SocialLink>

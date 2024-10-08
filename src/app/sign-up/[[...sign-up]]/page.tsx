@@ -10,8 +10,8 @@ export default function AuthSignUp() {
   const clerkAppearance = resolvedTheme === 'dark' ? dark : undefined
 
   return (
-    <Container className="mt-16 sm:mt-32">
-      <div className="flex justify-center">
+    <Container className='mt-16 sm:mt-32'>
+      <div className='flex justify-center'>
         <SignUp appearance={{ baseTheme: clerkAppearance }} />
       </div>
     </Container>

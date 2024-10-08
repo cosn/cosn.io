@@ -19,13 +19,13 @@ declare global {
 
 function Post({ post }: { post: PostWithSlug }) {
   return (
-    <article className="md:grid md:grid-cols-4 md:items-baseline">
-      <Card className="md:col-span-3">
+    <article className='md:grid md:grid-cols-4 md:items-baseline'>
+      <Card className='md:col-span-3'>
         <Card.Title href={`/posts/${post.slug}`}>{post.title}</Card.Title>
         <Card.Eyebrow
-          as="time"
+          as='time'
           dateTime={post.date}
-          className="md:hidden"
+          className='md:hidden'
           decorate
         >
           {formatDate(post.date)}
@@ -34,9 +34,9 @@ function Post({ post }: { post: PostWithSlug }) {
         <Card.Cta>Read post</Card.Cta>
       </Card>
       <Card.Eyebrow
-        as="time"
+        as='time'
         dateTime={post.date}
-        className="mt-1 hidden md:block"
+        className='mt-1 hidden md:block'
       >
         {formatDate(post.date)}
       </Card.Eyebrow>
@@ -60,8 +60,8 @@ export default async function PostsIndex() {
       title={metadata.description!}
       intro="I've generally found written form to be the clearest way to discuss complex subjects."
     >
-      <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-        <div className="flex max-w-3xl flex-col space-y-16">
+      <div className='md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40'>
+        <div className='flex max-w-3xl flex-col space-y-16'>
           {posts.map((post) => (
             <Post key={post.slug} post={post} />
           ))}

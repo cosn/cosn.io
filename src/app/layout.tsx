@@ -56,7 +56,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="h-full antialiased" suppressHydrationWarning>
+    <html lang='en' className='h-full antialiased' suppressHydrationWarning>
       <body
         className={cn(
           'flex h-full bg-zinc-50 font-sans dark:bg-black',
@@ -65,11 +65,11 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <div className="flex w-full">
+          <div className='flex w-full'>
             <Layout>{children}</Layout>
           </div>
         </Providers>
-        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
+        <Script src='https://scripts.simpleanalyticscdn.com/latest.js' />
       </body>
     </html>
   )
