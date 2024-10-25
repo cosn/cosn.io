@@ -74,10 +74,10 @@ export default async function About() {
           <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
             <p>I'm an engineer, operator, and entrepreneur.</p>
             <p>
-              Most recently I was the CTO of{' '}
-              <span className='font-bold'>Brex</span>, where I scaled the
-              company from 40 to over 1,000 employees and hundreds of millions
-              in annual revenue. I've also worked at{' '}
+              Building <span className='font-bold'>Accrual</span>. Previously I
+              was the CTO of <span className='font-bold'>Brex</span>, where I
+              scaled the company from 40 to over 1,000 employees and hundreds of
+              millions in annual revenue. I've also worked at{' '}
               <span className='font-bold'>Stripe</span> as an early engineer and
               manager, building core global payments infrastructure, and
               launching the Stripe Terminal product. I started my career at{' '}
