@@ -75,7 +75,7 @@ export default async function About() {
             <p>I'm an engineer, operator, and entrepreneur.</p>
             <p>
               Building <span className='font-bold'>Accrual</span>. Previously 
-              was the CTO of <span className='font-bold'>Brex</span>, where I
+              was the CTO at <span className='font-bold'>Brex</span>, where I
               scaled the company from 40 to over 1,000 employees and hundreds of
               millions in annual revenue. I've also worked at{' '}
               <span className='font-bold'>Stripe</span> as an early engineer and
