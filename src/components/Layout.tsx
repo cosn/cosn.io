@@ -2,7 +2,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
 
-export function Layout({ children }: { children: React.ReactNode }) {
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div className='fixed inset-0 flex justify-center sm:px-8'>

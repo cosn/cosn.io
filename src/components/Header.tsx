@@ -17,7 +17,7 @@ const nav: Record<string, string> = {
   Portfolio: '/portfolio',
 }
 
-function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const CloseIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg viewBox='0 0 24 24' aria-hidden='true' {...props}>
       <path
@@ -32,7 +32,7 @@ function CloseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const ChevronDownIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg viewBox='0 0 8 6' aria-hidden='true' {...props}>
       <path
@@ -46,7 +46,7 @@ function ChevronDownIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const SunIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg
       viewBox='0 0 24 24'
@@ -65,7 +65,7 @@ function SunIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const MoonIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg viewBox='0 0 24 24' aria-hidden='true' {...props}>
       <path
@@ -78,13 +78,13 @@ function MoonIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-function MobileNavItem({
+const MobileNavItem = ({
   href,
   children,
 }: {
   href: string
   children: React.ReactNode
-}) {
+}) => {
   return (
     <li>
       <Popover.Button as={Link} href={href} className='block py-2'>
@@ -94,9 +94,9 @@ function MobileNavItem({
   )
 }
 
-function MobileNavigation(
+const MobileNavigation = (
   props: React.ComponentPropsWithoutRef<typeof Popover>,
-) {
+) => {
   return (
     <Popover {...props}>
       <Popover.Button className='group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20'>
@@ -154,13 +154,13 @@ function MobileNavigation(
   )
 }
 
-function NavItem({
+const NavItem = ({
   href,
   children,
 }: {
   href: string
   children: React.ReactNode
-}) {
+}) => {
   const isActive = usePathname() === href
 
   return (
@@ -183,7 +183,7 @@ function NavItem({
   )
 }
 
-function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
+const DesktopNavigation = (props: React.ComponentPropsWithoutRef<'nav'>) => {
   return (
     <nav {...props}>
       <ul className='flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10'>
@@ -199,7 +199,7 @@ function DesktopNavigation(props: React.ComponentPropsWithoutRef<'nav'>) {
   )
 }
 
-function ThemeToggle() {
+const ThemeToggle = () => {
   const { resolvedTheme, setTheme } = useTheme()
   const otherTheme = resolvedTheme === 'dark' ? 'light' : 'dark'
   const [mounted, setMounted] = useState(false)
@@ -221,16 +221,16 @@ function ThemeToggle() {
   )
 }
 
-function clamp(number: number, a: number, b: number) {
+const clamp = (number: number, a: number, b: number) => {
   const min = Math.min(a, b)
   const max = Math.max(a, b)
   return Math.min(Math.max(number, min), max)
 }
 
-function AvatarContainer({
+const AvatarContainer = ({
   className,
   ...props
-}: React.ComponentPropsWithoutRef<'div'>) {
+}: React.ComponentPropsWithoutRef<'div'>) => {
   return (
     <div
       className={clsx(
@@ -242,13 +242,13 @@ function AvatarContainer({
   )
 }
 
-function Avatar({
+const Avatar = ({
   large = false,
   className,
   ...props
 }: Omit<React.ComponentPropsWithoutRef<typeof Link>, 'href'> & {
   large?: boolean
-}) {
+}) => {
   return (
     <Link
       href='/'
@@ -270,7 +270,7 @@ function Avatar({
   )
 }
 
-export function Header() {
+export const Header = () => {
   const isHomePage = usePathname() === '/'
 
   const headerRef = useRef<React.ElementRef<'div'>>(null)
@@ -281,15 +281,15 @@ export function Header() {
     const downDelay = avatarRef.current?.offsetTop ?? 0
     const upDelay = 64
 
-    function setProperty(property: string, value: string) {
+    const setProperty = (property: string, value: string) => {
       document.documentElement.style.setProperty(property, value)
     }
 
-    function removeProperty(property: string) {
+    const removeProperty = (property: string) => {
       document.documentElement.style.removeProperty(property)
     }
 
-    function updateHeaderStyles() {
+    const updateHeaderStyles = () => {
       if (!headerRef.current) {
         return
       }
@@ -330,7 +330,7 @@ export function Header() {
       }
     }
 
-    function updateAvatarStyles() {
+    const updateAvatarStyles = () => {
       if (!isHomePage) {
         return
       }
@@ -361,7 +361,7 @@ export function Header() {
       setProperty('--avatar-border-opacity', scale === toScale ? '1' : '0')
     }
 
-    function updateStyles() {
+    const updateStyles = () => {
       updateHeaderStyles()
       updateAvatarStyles()
       isInitial.current = false

@@ -13,7 +13,7 @@ import { type PostWithSlug } from '@/lib/posts'
 
 const logger = pino({ name: 'PostLayout' })
 
-function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const ArrowLeftIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg viewBox='0 0 16 16' fill='none' aria-hidden='true' {...props}>
       <path
@@ -26,13 +26,13 @@ function ArrowLeftIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function PostLayout({
+export const PostLayout = ({
   post,
   children,
 }: {
   post: PostWithSlug
   children: React.ReactNode
-}) {
+}) => {
   const router = useRouter()
   const { previousPathname } = useContext(AppContext)
 

@@ -16,7 +16,7 @@ import portraitImage from '@/images/portrait.jpg'
 import logger from '@/lib/logger'
 import { siteUrl } from '@/lib/utils'
 
-function SocialLink({
+const SocialLink = ({
   className,
   href,
   children,
@@ -26,7 +26,7 @@ function SocialLink({
   href: string
   icon: React.ComponentType<{ className?: string }>
   children: React.ReactNode
-}) {
+}) => {
   return (
     <li className={clsx(className, 'flex')}>
       <Link
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   description: 'Hello!',
 }
 
-export default async function About() {
+const About = async () => {
   const user = await currentUser()
   logger.verbose('user', { user })
 
@@ -74,7 +74,7 @@ export default async function About() {
           <div className='mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400'>
             <p>I'm an engineer, operator, and entrepreneur.</p>
             <p>
-              Building <span className='font-bold'>Accrual</span>. Previously 
+              Building <span className='font-bold'>Accrual</span>. Previously
               was the CTO at <span className='font-bold'>Brex</span>, where I
               scaled the company from 40 to over 1,000 employees and hundreds of
               millions in annual revenue. I've also worked at{' '}
@@ -236,3 +236,5 @@ export default async function About() {
     </Container>
   )
 }
+
+export default About

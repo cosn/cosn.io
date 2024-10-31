@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 
-function ChevronRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const ChevronRightIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg viewBox='0 0 16 16' fill='none' aria-hidden='true' {...props}>
       <path
@@ -14,14 +14,14 @@ function ChevronRightIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
-export function Card<T extends React.ElementType = 'div'>({
+export const Card = <T extends React.ElementType = 'div'>({
   as,
   className,
   children,
 }: Omit<React.ComponentPropsWithoutRef<T>, 'as' | 'className'> & {
   as?: T
   className?: string
-}) {
+}) => {
   const Component = as ?? 'div'
 
   return (

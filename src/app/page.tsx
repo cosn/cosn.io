@@ -21,7 +21,7 @@ import { meta } from '@/lib/meta'
 import { type PostWithSlug } from '@/lib/posts'
 import { siteUrl } from '@/lib/utils.ts'
 
-function Post({ post }: { post: PostWithSlug }) {
+const Post = ({ post }: { post: PostWithSlug }) => {
   return (
     <Card as='article'>
       <Card.Title href={`/posts/${post.slug}`}>{post.title}</Card.Title>
@@ -34,12 +34,12 @@ function Post({ post }: { post: PostWithSlug }) {
   )
 }
 
-function SocialLink({
+const SocialLink = ({
   icon: Icon,
   ...props
 }: React.ComponentPropsWithoutRef<typeof Link> & {
   icon: React.ComponentType<{ className?: string }>
-}) {
+}) => {
   return (
     <Link className='group -m-1 p-1' target='_blank' {...props}>
       <Icon className='h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300' />
@@ -47,7 +47,7 @@ function SocialLink({
   )
 }
 
-function Photos() {
+const Photos = () => {
   const rotations = [
     'rotate-2',
     '-rotate-2',
@@ -80,7 +80,7 @@ function Photos() {
   )
 }
 
-export default async function Home() {
+const Home = async () => {
   const res = await fetch(siteUrl('api/posts'), { next: { tags: ['posts'] } })
   const data = (await res.json()) as { posts: PostWithSlug[] }
   const posts = data.posts.slice(0, 3)
@@ -133,6 +133,8 @@ export default async function Home() {
     </>
   )
 }
+
+export default Home
 
 // TODO: Disable for now, revisit later
 // function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {

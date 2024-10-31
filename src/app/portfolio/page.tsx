@@ -205,7 +205,7 @@ const investments: Investment[] = [
   },
 ]
 
-function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+const LinkIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
   return (
     <svg viewBox='0 0 24 24' aria-hidden='true' {...props}>
       <path
@@ -221,7 +221,7 @@ export const metadata: Metadata = {
   description: 'Angel investments',
 }
 
-export default function Portfolio() {
+const Portfolio = () => {
   return (
     <SimpleLayout
       title={metadata.description!}
@@ -260,3 +260,5 @@ export default function Portfolio() {
     </SimpleLayout>
   )
 }
+
+export default Portfolio

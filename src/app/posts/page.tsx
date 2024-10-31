@@ -17,7 +17,7 @@ declare global {
   }
 }
 
-function Post({ post }: { post: PostWithSlug }) {
+const Post = ({ post }: { post: PostWithSlug }) => {
   return (
     <article className='md:grid md:grid-cols-4 md:items-baseline'>
       <Card className='md:col-span-3'>
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     'Long-form thoughts on building, leadership, and arbitrary topics',
 }
 
-export default async function PostsIndex() {
+const PostsIndex = async () => {
   const res = await fetch(siteUrl('api/posts'), { next: { tags: ['posts'] } })
   const data = (await res.json()) as { posts: PostWithSlug[] }
   const posts = data.posts
@@ -70,3 +70,5 @@ export default async function PostsIndex() {
     </SimpleLayout>
   )
 }
+
+export default PostsIndex

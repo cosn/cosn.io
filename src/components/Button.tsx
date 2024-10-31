@@ -15,11 +15,11 @@ type ButtonProps = {
   | React.ComponentPropsWithoutRef<typeof Link>
 )
 
-export function Button({
+export const Button = ({
   variant = 'primary',
   className,
   ...props
-}: ButtonProps) {
+}: ButtonProps) => {
   className = clsx(
     'inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm outline-offset-2 transition active:transition-none',
     variantStyles[variant],

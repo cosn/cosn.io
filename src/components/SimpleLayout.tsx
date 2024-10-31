@@ -1,6 +1,6 @@
 import { Container } from '@/components/Container'
 
-export function SimpleLayout({
+export const SimpleLayout = ({
   title,
   intro,
   children,
@@ -8,7 +8,7 @@ export function SimpleLayout({
   title: string
   intro: string
   children?: React.ReactNode
-}) {
+}) => {
   return (
     <Container className='mt-16 sm:mt-32'>
       <header className='max-w-4xl'>

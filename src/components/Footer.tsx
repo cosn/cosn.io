@@ -11,12 +11,12 @@ import {
 
 import { meta } from '@/lib/meta'
 
-function SocialLink({
+const SocialLink = ({
   icon: Icon,
   ...props
 }: React.ComponentPropsWithoutRef<typeof Link> & {
   icon: React.ComponentType<{ className?: string }>
-}) {
+}) => {
   return (
     <Link className='group -m-1 p-1' {...props}>
       <Icon className='h-6 w-6 fill-zinc-400 transition hover:fill-teal-500 dark:fill-zinc-500 dark:hover:fill-teal-400' />
@@ -24,7 +24,7 @@ function SocialLink({
   )
 }
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className='mt-32 flex-none'>
       <ContainerOuter>
