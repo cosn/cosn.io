@@ -27,6 +27,7 @@ import logoFallback from '@/images/logos/portfolio.svg'
 import logoRepool from '@/images/logos/repool.svg'
 import logoRunloop from '@/images/logos/runloop.svg'
 import logoSavvy from '@/images/logos/savvy.svg'
+import logoSdsa from '@/images/logos/sdsa.jpg'
 import logoSpark from '@/images/logos/spark.png'
 import logoStandardFleet from '@/images/logos/standardfleet.png'
 import logoWholesail from '@/images/logos/wholesail.svg'
@@ -203,6 +204,12 @@ const investments: Investment[] = [
     link: 'https://www.chaidiscovery.com',
     logo: logoChai,
   },
+  {
+    name: '/dev/agents',
+    description: 'The next-gen operating system for AI agents.',
+    link: 'https://sdsa.com',
+    logo: logoSdsa,
+  },
 ]
 
 const LinkIcon = (props: React.ComponentPropsWithoutRef<'svg'>) => {
@@ -221,7 +228,7 @@ export const metadata: Metadata = {
   description: 'Angel investments',
 }
 
-const Portfolio = () => {
+export const Portfolio = () => {
   return (
     <SimpleLayout
       title={metadata.description!}
