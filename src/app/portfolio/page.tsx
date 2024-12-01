@@ -228,7 +228,7 @@ export const metadata: Metadata = {
   description: 'Angel investments',
 }
 
-export const Portfolio = () => {
+const Portfolio = () => {
   return (
     <SimpleLayout
       title={metadata.description!}
