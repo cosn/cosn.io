@@ -6,7 +6,7 @@
   "packageManager": "pnpm@9.4.0",
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "test": "vitest run",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
@@ -45,11 +45,11 @@
     "clsx": "^2.1.1",
     "feed": "^4.2.2",
     "lucide-react": "^0.379.0",
-    "next": "^14.2.20",
+    "next": "15.1.2",
     "next-themes": "^0.2.1",
     "pino": "^9.5.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "remark-gfm": "^4.0.0",
     "rss-parser": "^3.13.0",
     "tailwind-merge": "^2.5.5",
@@ -62,15 +62,15 @@
     "@mapbox/rehype-prism": "^0.9.0",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@next/mdx": "^14.2.20",
+    "@next/mdx": "15.1.2",
     "@playwright/test": "^1.49.1",
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^15.0.7",
     "@types/mdx": "^2.0.13",
     "@types/node": "^20.17.10",
-    "@types/react": "^18.3.17",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "19.0.2",
+    "@types/react-dom": "19.0.2",
     "@types/webpack-env": "^1.18.5",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
@@ -88,5 +88,11 @@
     "typescript": "^5.7.2",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.6.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.2",
+      "@types/react-dom": "19.0.2"
+    }
   }
 }

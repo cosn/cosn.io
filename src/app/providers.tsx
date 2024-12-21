@@ -5,7 +5,7 @@ import { ThemeProvider, useTheme } from 'next-themes'
 import { createContext, useEffect, useRef } from 'react'
 
 const usePrevious = <T,>(value: T) => {
-  const ref = useRef<T>()
+  const ref = useRef<T>(undefined)
 
   useEffect(() => {
     ref.current = value
