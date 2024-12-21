@@ -1,9 +1,9 @@
-import rehypePrism from '@mapbox/rehype-prism'
 import nextMDX from '@next/mdx'
+import { type NextConfig } from 'next'
+import rehypePrism from 'rehype-prism-plus'
 import remarkGfm from 'remark-gfm'
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
   experimental: {
     mdxRs: true,
@@ -19,7 +19,6 @@ const nextConfig = {
       ],
     },
   },
-  swcMinify: true,
 }
 
 const withMDX = nextMDX({
