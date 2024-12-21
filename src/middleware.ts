@@ -1,4 +1,5 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { geolocation, ipAddress } from '@vercel/functions'
 import { type NextRequest } from 'next/server'
 import pino from 'pino'
 
@@ -9,7 +10,11 @@ const handleApiTokenRoute = (req: NextRequest) => {
   const token = req.headers.get('X-API-TOKEN')
 
   if (token !== process.env.API_TOKEN) {
-    logger.warn('Unauthorized', { ip: req.ip, geo: req.geo, token: token })
+    logger.warn('Unauthorized', {
+      ip: ipAddress(req),
+      geo: geolocation(req),
+      token: token,
+    })
     return new Response('Unauthorized', { status: 401 })
   }
 
@@ -21,7 +26,11 @@ const handleCronTokenRoute = (req: NextRequest) => {
   const token = req.headers.get('authorization')
 
   if (token !== `Bearer ${process.env.CRON_SECRET}`) {
-    logger.warn('Unauthorized', { ip: req.ip, geo: req.geo, token: token })
+    logger.warn('Unauthorized', {
+      ip: ipAddress(req),
+      geo: geolocation(req),
+      token: token,
+    })
     return new Response('Unauthorized', { status: 401 })
   }
 
