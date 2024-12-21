@@ -36,7 +36,7 @@
     "url": "https://cosn.io"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.7.5",
+    "@clerk/nextjs": "^6.9.6",
     "@clerk/themes": "^2.2.2",
     "@headlessui/react": "^1.7.19",
     "@upstash/redis": "^1.34.3",

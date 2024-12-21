@@ -37,7 +37,7 @@ const handleCronTokenRoute = (req: NextRequest) => {
   return null
 }
 
-export default clerkMiddleware((_, req) => {
+export default clerkMiddleware(async (_, req) => {
   if (process.env.NODE_ENV === 'development') return null
 
   let res
