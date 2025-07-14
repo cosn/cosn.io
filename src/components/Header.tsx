@@ -176,7 +176,7 @@ const NavItem = ({
       >
         {children}
         {isActive && (
-          <span className='absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0' />
+          <span className='absolute inset-x-1 -bottom-px h-px bg-linear-to-r from-teal-500/0 via-teal-500/40 to-teal-500/0 dark:from-teal-400/0 dark:via-teal-400/40 dark:to-teal-400/0' />
         )}
       </Link>
     </li>
@@ -215,8 +215,8 @@ const ThemeToggle = () => {
       className='group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20'
       onClick={() => setTheme(otherTheme)}
     >
-      <SunIcon className='h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-teal-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-teal-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-teal-600' />
-      <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500' />
+      <SunIcon className='h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden dark:fill-teal-50 dark:stroke-teal-500 dark:group-hover:fill-teal-50 dark:group-hover:stroke-teal-600' />
+      <MoonIcon className='hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block dark:group-hover:stroke-zinc-400 not-dark:fill-teal-400/10 not-dark:stroke-teal-500' />
     </button>
   )
 }
@@ -390,7 +390,7 @@ export const Header = () => {
           <>
             <div
               ref={avatarRef}
-              className='order-last mt-[calc(theme(spacing.16)-theme(spacing.3))]'
+              className='order-last mt-[calc(--spacing(16)-(--spacing(3)))]'
             />
             <Container
               className='top-0 order-last -mb-3 pt-3'
@@ -400,7 +400,7 @@ export const Header = () => {
               }}
             >
               <div
-                className='top-[var(--avatar-top,theme(spacing.3))] w-full'
+                className='top-(--avatar-top,--spacing(3)) w-full'
                 style={{
                   position:
                     'var(--header-inner-position)' as React.CSSProperties['position'],
@@ -433,7 +433,7 @@ export const Header = () => {
           }}
         >
           <Container
-            className='top-[var(--header-top,theme(spacing.6))] w-full'
+            className='top-(--header-top,--spacing(6)) w-full'
             style={{
               position:
                 'var(--header-inner-position)' as React.CSSProperties['position'],
