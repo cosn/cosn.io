@@ -41,6 +41,24 @@ describe('RSS Parser and Raindrop Integration', () => {
           { link: 'https://test3.com', title: 'Test 3' }, // No date
         ],
       },
+      {
+        items: [
+          {
+            link: 'https://test4.com',
+            title: 'Test 4',
+            pubDate: '2023-01-03T00:00:00Z',
+          },
+        ],
+      },
+      {
+        items: [
+          {
+            link: 'https://test5.com',
+            title: 'Test 5',
+            pubDate: '2023-01-04T00:00:00Z',
+          },
+        ],
+      },
     ]
 
     // @ts-expect-error
@@ -100,12 +118,12 @@ describe('RSS Parser and Raindrop Integration', () => {
 
       const result = await GET()
 
-      expect(Parser.prototype.parseURL).toHaveBeenCalledTimes(2) // For each subscription
-      expect(raindrop.create).toHaveBeenCalledTimes(2) // For the two items with dates
+      expect(Parser.prototype.parseURL).toHaveBeenCalledTimes(4) // For each subscription in mockFeedQueue
+      expect(raindrop.create).toHaveBeenCalledTimes(4)
       expect(logger.warn).toHaveBeenCalledWith('No date found, skipping', {
         item: 'https://test3.com',
       })
-      expect(await result.json()).toEqual({ entries: 2 })
+      expect(await result.json()).toEqual({ entries: 4 })
     })
 
     it('should skip entries older than lastRunDate', async () => {

@@ -3,9 +3,11 @@ import logger from '@/lib/logger'
 import raindrop from '@/lib/raindrop'
 import redis from '@/lib/redis'
 
-const subs = [
+export const subs = [
   'https://lethain.com/feeds.xml',
   'https://www.industrialempathy.com/feed/feed.xml',
+  'https://github.com/nvim-lua/kickstart.nvim/commits/main.atom',
+  'https://github.com/workos/authkit-remix/commits/main.atom',
 ]
 
 type ParserCustomFeed = {}
