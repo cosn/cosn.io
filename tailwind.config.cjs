@@ -4,7 +4,6 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 module.exports = {
   darkMode: 'selector',
   content: ['./src/**/*.{js,jsx,ts,tsx,md,mdx,svg}'],
-  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
   theme: {
     fontSize: {
       xs: ['0.8125rem', { lineHeight: '1.5rem' }],
